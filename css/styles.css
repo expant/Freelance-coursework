@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    font-family: 'Roboto Slab', serif;
+    padding: 30px 0;
+    background: #0C0C5C;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+}
+
+.img-logo {
+    width: 40px;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.logo span {
+   color: #fff;
+   font-size: 20px;
+
+}
+
+.sign-in-up {
+    float: right;
+    margin-top: 10px;
+}
+
+.sign-in-up span {
+    color: #fff;
+}
+
+.sign-in-up a {
+    color: #fff;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.sign-in-up a:first-of-type:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.sign-in-up a:last-of-type {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.sign-in-up a:last-of-type:hover {
+    transition: all .2s;
+    background: #fff;
+    color: #0c0c5c;
+}
+
+/* Стили страницы авторизции */
+.page-sign-in {
+  background-image: url('../imgs/prism.png');
+}
+
+.title-sign-in {
+  padding: 40px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.title-sign-in h3 {
+  font-size: 30px;
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 2px;
+}
+
+.title-sign-in img {
+  margin: 0 5px;
+  width: 50px;
+  vertical-align: middle;
+}
+
+.form, .link-sign-up {
+  max-width: 400px;
+  margin: 0 auto;
+  height: auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  font-size: 18px;
+  border: .5px solid green;
+  box-shadow: inset 0 0 1px 0px #000;
+}
+
+.form input[type="text"]:focus,
+.form input[type="text"]:active,
+.form input[type="password"]:focus,
+.form input[type="password"]:active {
+  outline: none;
+  border-bottom: 2px solid #0C0C5C;
+}
+
+.form input[type="submit"] {
+  width: auto;
+  padding: 5px 30px;
+  margin-bottom: 0;
+  border: 3px solid #0C0C5C;
+  background: #fff;
+}
+
+.form input[type="submit"]:hover {
+  transition: all .2s;
+  background: #0C0C5C;
+  color: #fff;
+  cursor: pointer;
+}
+
+.margin {
+  font-size: 15px;
+  font-family: 'Roboto Slab', serif;
+  margin: 30px 0;
+}
+
+.link-sign-up {
+  text-align: center;
+  padding: 20px;
+}
+
+.link-sign-up img {
+  width: 25px;
+}
+
+.link-sign-up a {
+  padding: 0 5px;
+  text-decoration: none;
+}
