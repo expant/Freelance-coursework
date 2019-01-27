@@ -16,8 +16,8 @@ body {
 
 header {
     font-family: 'Roboto Slab', serif;
-    padding: 30px 0;
-    background: #0C0C5C;
+    padding: 25px 0;
+    background: linear-gradient(to right, #00d2ff, #928DAB);
 }
 
 .wrapper {
@@ -37,7 +37,7 @@ header {
 
 .logo span {
    color: #fff;
-   font-size: 20px;
+   font-size: 25px;
 
 }
 
@@ -54,6 +54,11 @@ header {
     color: #fff;
     padding: 5px;
     text-decoration: none;
+}
+
+.sign-in-up a:first-child {
+  padding: 0px;
+  margin-right: 10px;
 }
 
 .sign-in-up a:first-of-type:hover {
@@ -73,9 +78,85 @@ header {
     color: #0c0c5c;
 }
 
+.bg-slider {
+  font-family: 'Roboto Slab', serif;
+  background-image: url('../imgs/SplitShire.jpg');
+}
+
+.title {
+  max-width: 550px;
+  padding: 70px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.hire-or-become {
+  padding: 0 0 100px 0;
+}
+
+.hire-or-become a {
+  padding: 20px 30px;
+  margin-right: 10px;
+  font-size: 23px;
+  transition: all .3s;
+  text-decoration: none;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 4px;
+}
+
+.hire-or-become a:first-of-type {
+  background: #fff;
+  color: #000;
+}
+
+.hire-or-become a:first-of-type:hover {
+  box-shadow: inset 0 0 20px -7px #000;
+}
+
+.hire-or-become a:hover {
+  transition: all .2s;
+  background: #fff;
+  color: #000;
+}
+
+.how-it-works {
+  /*background: url("../imgs/design-tools.jpg")*/
+  background: linear-gradient(to right, #00d2ff, #928DAB);
+  padding-bottom: 73px; 
+}
+
+.hiw-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 23px;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 30px;
+  background: #ffffff;
+  border-radius: 0 0 8px 8px;
+  color: #000;
+}
+
+.hiw-img img {
+  float: left;
+  width: 45%;
+}
+
+.hiw-text {
+  float: right;
+  width: 45%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
 /* Стили страницы авторизции */
 .page-sign-in {
-  background-image: url('../imgs/prism.png');
+  background-image: url('../imgs/shattered-island.gif');
+  /*background: linear-gradient(to right, #6441A5, #2a0845);*/
 }
 
 .title-sign-in {
@@ -102,7 +183,7 @@ header {
   height: auto;
   padding: 30px;
   background: #fff;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .form input {
@@ -119,7 +200,7 @@ header {
 .form input[type="password"]:focus,
 .form input[type="password"]:active {
   outline: none;
-  border-bottom: 2px solid #0C0C5C;
+  border-color: #0C0C5C;
 }
 
 .form input[type="submit"] {
