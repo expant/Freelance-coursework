@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-sign-in {
+    /*background-image: url('../imgs/shattered-island.gif');*/
+    background: linear-gradient(to right, #00d2ff, #928DAB);
+  }
+  
+  .title-sign-in {
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .title-sign-in h3 {
+    font-size: 30px;
+    font-family: 'Poiret One', cursive;
+    letter-spacing: 2px;
+  }
+  
+  .title-sign-in img {
+    margin: 0 5px;
+    width: 50px;
+    vertical-align: middle;
+  }
+  
+  .form, .link-sign-up {
+    font-family: 'Roboto Slab', serif;
+    max-width: 400px;
+    margin: 0 auto;
+    height: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 25px -7px #000;
+  }
+  
+  .form label {
+      font-size: 15px;
+  }
+
+  .form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    font-size: 18px;
+    border: .5px solid green;
+    box-shadow: inset 0 0 1px 0px #000;
+  }
+  
+  .form input[type="text"]:focus,
+  .form input[type="text"]:active,
+  .form input[type="password"]:focus,
+  .form input[type="password"]:active {
+    outline: none;
+    border-color: #0C0C5C;
+  }
+  
+  .form input[type="submit"] {
+    width: auto;
+    padding: 5px 40px;
+    margin-bottom: 0;
+    box-shadow: none;
+    border: 3px solid #00bcd4;
+    background: #fff;
+  }
+  
+  .form input[type="submit"]:hover {
+    transition: all .2s;
+    background: #00bcd4;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .margin {
+    font-size: 15px;
+    font-family: 'Roboto Slab', serif;
+    margin: 30px 0;
+  }
+  
+  .link-sign-up {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .link-sign-up img {
+    width: 25px;
+  }
+  
+  .link-sign-up a {
+    padding: 0 5px;
+    text-decoration: none;
+  }
+  
