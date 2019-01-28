@@ -10,15 +10,20 @@
   }
   
   .title-sign-in {
-    padding: 40px 0;
+    margin-top: 80px;
     text-align: center;
-    color: #fff;
+    color: #000;
+    padding: 20px 0;
   }
   
-  .title-sign-in h3 {
+  .title-sign-in span {
     font-size: 30px;
+    font-weight: 600;
     font-family: 'Poiret One', cursive;
+    background: #e0f7fa;
+    border-radius: 8px 8px 0px 0;
     letter-spacing: 2px;
+    padding: 20px;
   }
   
   .title-sign-in img {
