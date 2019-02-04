@@ -12,12 +12,19 @@
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    background: linear-gradient(to right, #00d2ff, #928DAB);
 }
+
+.sect-wrap {
+  width: 75%;
+  margin: 0 auto;
+}
+
+
 
 header {
     font-family: 'Roboto Slab', serif;
     padding: 25px 0;
-    background: linear-gradient(to right, #00d2ff, #928DAB);
 }
 
 .wrapper {
@@ -141,7 +148,6 @@ header {
 
 .how-it-works {
   /*background: url("../imgs/design-tools.jpg")*/
-  background: linear-gradient(to right, #00d2ff, #928DAB);
   padding-bottom: 73px; 
 }
 
