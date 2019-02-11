@@ -16,16 +16,18 @@
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background: linear-gradient(to right, #00d2ff, #928DAB);
+    /*background: linear-gradient(to right, #00d2ff, #928DAB);*/
+   background: linear-gradient(to right, #7474BF, #348AC7);
 }
 
 .sect-wrap {
+  max-width: 1250px;
   width: 90%;
   margin: 0 auto;
- 
 }
 
 .wrapp {
+  
   background: #fff;
   padding: 30px;
   margin: 30px 0;
@@ -50,15 +52,25 @@ header {
     width: 40px;
     margin: 0 10px 0 0;
     vertical-align: middle;
+    animation-duration: .9s;
+    animation-name: slideDown;
+}
+
+@keyframes slideDown {
+  from {
+    transition: all .9s;
+    transform: translate(0, -70px);
+  }
+
+  to {
+    transform: all .9s;
+    transform: translate(0, 0);
+  }
 }
 
 .logo span {
- 
   padding: 10px 20px;
   font-size: 25px;
-  background: #12c9f4;
-  border-radius: 7px;
-  box-shadow: 0 0 20px -7px #000;
 }
 
 .logo a {

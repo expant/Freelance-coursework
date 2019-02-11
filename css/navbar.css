@@ -1,8 +1,8 @@
 aside.sidebar {
-    width: 23%;
+    width: 20%;
     height: auto;
-    background: #fff;
-    box-shadow: 0 0 25px -8px #000;
+   /* background: #fff;
+    box-shadow: 0 0 25px -8px #000;*/
     float: left;
     margin-right: 20px;
 }
@@ -10,27 +10,29 @@ aside.sidebar {
 
 .nav li {
     list-style: none;
-    padding: 25px 30px;
-    border-bottom: 3px solid #eee;
+    border-bottom: 2px solid #fff;
     background: #333333;
-   
+    transition: all .2s;
+    transform: translate(0, 0);
+    transform: rotate(4deg);
 }
 
 .nav a {
+    display: inline-block;
     width: 100%;
+    padding: 25px 30px;
     text-decoration: none;
     transition: all .2s;
     color: #fff;
 }
 
-/*.nav a:hover {
+.nav a:hover {
     transition: all .2s;
-    background: #333333;
-    color: #fff;
-}*/
+    transform: translate(8px, 0);
+}
 
 .mainw {
-    width: 75%;
+    width: 78%;
     background: #fff;
     box-shadow: 0 0 25px -8px #000;
     border-radius: 6px;

@@ -9,6 +9,13 @@
 .message {
     margin-bottom: 40px;
     text-align: center; 
+    transition: all .2s;
+    transform: translate(0, 0);
+}
+
+.message:hover {
+    transition: all .2s;
+    transform: translate(-7px, 0);
 }
 
 .message a {
@@ -21,18 +28,24 @@
 
 .message a:hover {
     transition: all .2s;
-    box-shadow: 0 0 25px -9px #333;
+    
 }
 
 .name-ico {
     width: 10%;
     display: inline-block;
-    margin-right: 70px;
+    margin-right: 50px;
+}
+
+.ico img {
+    width: 25px;
+
 }
 
 .text-time {
     width: 80%;
     display: inline-block;
+    margin-bottom: 8px;
 }
 
 .name-ico .ico, 
