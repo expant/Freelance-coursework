@@ -4,7 +4,6 @@ aside.sidebar {
    /* background: #fff;
     box-shadow: 0 0 25px -8px #000;*/
     float: left;
-    margin-right: 20px;
 }
 
 
@@ -14,7 +13,10 @@ aside.sidebar {
     background: #333333;
     transition: all .2s;
     transform: translate(0, 0);
-    transform: rotate(4deg);
+}
+
+.nav li:hover {
+    background: #424242;
 }
 
 .nav a {
@@ -29,6 +31,7 @@ aside.sidebar {
 .nav a:hover {
     transition: all .2s;
     transform: translate(8px, 0);
+    
 }
 
 .mainw {
