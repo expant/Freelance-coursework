@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Биржа
+    // CSS
+    link(rel='stylesheet', href='css/market.css')
+    link(rel='stylesheet', href='css/navbar.css')
+    link(rel='stylesheet', href='css/styles.css')
+  body
+    .sect-wrap.clearfix
+      .wrapp.clearfix
+        aside.sidebar
+          .nav
+            ul
+              li
+                a(href='index.html') Главная
+              li
+                a(href='#') Биржа
+              li
+                a(href='messages.html') Сообщения
+              li
+                a(href='') Мои заказы
+              li
+                a(href='') Страница пользователя
+        .mainw.clearfix
+          .tit
+            h1 Биржа
+          .filter
+            h2 Фильтр
+            .categories
+              select#filt(name='filter')
+                option(value='Все категории') Все категории
+                option(value='Вёрстка') Вёрстка
+                option(value='front-end') Front-end
+                option(value='back-end') Back-end
+            .budget
+              h3 Бюджет (руб.)
+              form(action='')
+                input(type='text', name='from')
+                input(type='text', name='to')
+                input(type='submit', value='Поиск')
+          .market
+            .task
+              h3.task-head #{title}
+              p.task-text #{text}
+              h4.price Цена: #{price} очка/ов
+							
