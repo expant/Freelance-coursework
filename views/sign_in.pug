@@ -15,10 +15,10 @@ html(lang='en')
     .title-sign-in
       span Войдите в Freelance
     .form
-      form(action='')
+      form(method='POST')
         p
-          label(for='email') Имя пользователя или email
-        input(type='text', name='email', autofocus='autofocus', required='')
+          label(for='username') Имя пользователя или email
+        input(type='text', name='username', autofocus='autofocus', required='')
         p
           label(for='password') Пароль
         input(type='password', name='password', required='')
@@ -27,4 +27,4 @@ html(lang='en')
       .link-sign-up
         p
           | Новичок в Freelance? 
-          a(href='sign_up.html') Зарегистрироваться
+          a(href='sign_up.pug') Зарегистрироваться

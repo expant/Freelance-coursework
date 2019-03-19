@@ -8,18 +8,18 @@ html(lang='en')
     // CSS
     link(rel='stylesheet', href='css/styles.css')
   body
-    header.sect-wrap
+    header
       .wrapper.clearfix
         .logo
           span
             a(href='index.html') Freelance
         .sign-in-up
-          a(href='sign_in.html') Войти
+          a(href='sign_in') Войти
           span /
           a(href='sign_up.html') Зарегистрироваться
     section.bg-slider
       .sect-wrap
-        .wrapper.clearfix
+        .wrapper.clearfix.img_png-sect
           .title
             h1 Вы можете нанять фрилансера или можете сами найти работу
           .hire-or-become
@@ -58,4 +58,6 @@ html(lang='en')
               | Lorem ipsum dolor sit amet consectetur adipisicing elit.
               | Temporibus reprehenderit sit aliquid velit tempore illum
               | fugit recusandae eos quas quidem?
-    section.sect-wrap
+    section
+        .show-all-freelancers 
+          a(href="freelancers") Показать список фрилансеров

@@ -1,6 +1,7 @@
 /* Google Fonst */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Margarine');
 
 * {
     margin: 0;
@@ -15,14 +16,12 @@
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-   /* background: linear-gradient(to right, #00d2ff, #928DAB);*/
-   background: linear-gradient(to right, #7474BF, #348AC7);
-
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #fff;
 }
 
 .sect-wrap {
-  max-width: 1250px;
+  max-width: 1400px;
   width: 90%;
   margin: 0 auto;
 }
@@ -34,13 +33,20 @@ body {
 }
 
 header {
-    font-family: 'Roboto Slab', serif;
-    padding: 25px 0;
+  font-family: 'Roboto Slab', serif;
+  padding: 20px 0;
+  background: #33eaff;
 }
 
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    
+}
+
+.img_png-sect {
+  background: url('../imgs/freelance_img.png') 600px 0 no-repeat;
+  background-size: 550px;
 }
 
 .logo {
@@ -49,8 +55,6 @@ header {
 
 .img-logo {
     width: 40px;
-    margin: 0 10px 0 0;
-    vertical-align: middle;
     animation-duration: .9s;
     animation-name: slideDown;
 }
@@ -67,34 +71,25 @@ header {
   }
 }
 
-.logo span {
-  padding: 10px 20px;
-  font-size: 25px;
-}
-
 .logo a {
-  transition: all .2s;
-  color: #fff;
+  font-size: 25px;
+  font-style: italic;
+  font-family: 'Margarine', cursive;
   text-decoration: none;
-}
-
-.logo a:hover {
-  transition: all .2s;
-  color: #000;
+  color: #333;
 }
 
 .sign-in-up {
     float: right;
-    margin-top: 10px;
+    margin-top: 4px;
 }
 
 .sign-in-up span {
-    color: #fff;
+    color: #333;
 }
 
 .sign-in-up a {
-    color: #fff;
-    padding: 5px;
+    color: #333;
     text-decoration: none;
 }
 
@@ -102,7 +97,7 @@ header {
   padding: 0px;
   margin-right: 10px;
   transition: all .2s;
-  color: #fff;
+  color: #333;
 }
 
 .sign-in-up a:first-of-type:hover {
@@ -112,20 +107,19 @@ header {
 
 .sign-in-up a:last-of-type {
     margin-left: 10px;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 5px;
+    text-decoration: #333;
+    transition: all .2s;
 }
 
 .sign-in-up a:last-of-type:hover {
     transition: all .2s;
-    background: #fff;
-    color: #0c0c5c;
+    color: #fff;
 }
 
 .bg-slider {
   font-family: 'Roboto Slab', serif;
-  background-image: url('../imgs/SplitShire.jpg');
+  /*background-image: url('../imgs/SplitShire.jpg'); */
+  background: #33eaff;
 }
 
 .title {
@@ -178,9 +172,9 @@ header {
   text-align: center;
   padding: 30px;
   margin-bottom: 30px;
-  background: #ffffff;
+  background: #eee;
   border-radius: 0 0 8px 8px;
-  color: #000;
+  color: #333;
 }
 
 .hiw-img img {
@@ -191,8 +185,24 @@ header {
 .hiw-text {
   float: right;
   width: 45%;
-  background: #fff;
+  background: #eee;
   border-radius: 5px;
   padding: 20px;
   margin: 50px 30px 0 0; 
+  color: #333;
+}
+
+.show-all-freelancers {
+  padding: 130px 0;
+  text-align: center;
+  background: #33eaff;
+}
+
+.show-all-freelancers a {
+  text-decoration: none;
+  font-size: 23px;
+  color: #fff;
+  background: #2196f3;
+  border-radius: 30px;
+  padding: 15px 25px;
 }
