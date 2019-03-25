@@ -76,8 +76,7 @@
 .task {
     height: auto;
     padding: 30px;
-    box-shadow: 0 0 20px -10px #000;
-    border: 2px solid #eee;
+    box-shadow: 0 0 15px -8px #000;
     margin-bottom: 20px;
     transition: all .2s;
     transform: scale(1);

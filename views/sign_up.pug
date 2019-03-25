@@ -13,7 +13,7 @@ html(lang='en')
     link(rel='stylesheet', href='css/sign_in.css')
   body.page-sign-in
     .title-sign-in
-      span Войдите в Freelance
+      span Региcтрация
     .form
       form(method='POST')
         p
@@ -22,9 +22,8 @@ html(lang='en')
         p
           label(for='password') Пароль
         input(type='password', name='password', required='')
-        input(type='submit', value='Войти')
-    .margin
-      .link-sign-up
         p
-          | Новичок в Freelance? 
-          a(href='sign_up') Зарегистрироваться
+          label(for='password') Повторите пароль
+        input(type='password', name='passwordAgain', required='')
+        input(type='submit', value='Зарегистрироваться')
+    .margin

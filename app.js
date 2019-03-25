@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const market = require('./routes/market');
-const signIn = require('./routes/signIn');
+const submit = require('./routes/submit');
 //const showAllFreelancers = require('./routes/showFreelancers');
 
 const app = express();
@@ -26,7 +26,13 @@ app.get('/sign_in', (req, res) => {
     res.render('sign_in');
 })
 
-app.post('/sign_in', signIn.submit);
+app.post('/sign_in', submit.signIn);
+
+app.get('/sign_up', (req, res) => {
+    res.render('sign_up');
+});
+
+app.post('/sign_up', submit.signUp);
 
 //app.get('/freelancers', showAllFreelancers.users);
 
