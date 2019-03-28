@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+
 const market = require('./routes/market');
 const submit = require('./routes/submit');
 //const showAllFreelancers = require('./routes/showFreelancers');
@@ -10,15 +12,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 
 // Задаём опции -----------------------------------
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+app.get('/', submit.getMainPage);
 
 app.get('/market', market.tasks);
 

@@ -7,6 +7,8 @@ html(lang='en')
     title Freelance - зарабатывать просто
     // CSS
     link(rel='stylesheet', href='css/styles.css')
+    // JS
+    script(src="js/menu.js" defer)
   body
     header
       .wrapper.clearfix
@@ -14,9 +16,19 @@ html(lang='en')
           span
             a(href='index.html') Freelance
         .sign-in-up
-          a(href='sign_in') Войти
-          span /
-          a(href='sign_up') Зарегистрироваться
+          if username
+            span.login #{username}
+            .menu#nav-menu 
+              span.title-nav
+                img(src="icons/menu.svg", alt="menu")
+              ul
+                li: a(href="/market") Биржа
+                li: a(href="") Мои диалоги
+                li: a(href="") Мои заказы
+          else 
+            a(href='sign_in') Войти
+            span /
+            a(href='sign_up') Зарегистрироваться
     section.bg-slider
       .sect-wrap
         .wrapper.clearfix.img_png-sect

@@ -11,6 +11,8 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
     // CSS
     link(rel='stylesheet', href='css/sign_in.css')
+    // JS
+    script(src="../public/js/checkPassword.js" defer)
   body.page-sign-in
     .title-sign-in
       span Региcтрация
@@ -19,7 +21,7 @@ html(lang='en')
         p
           label(for='username') Имя пользователя 
         input(type='text', name='username', autofocus='autofocus', required='')
-        p
+        p.pass-err
           label(for='password') Пароль
         input(type='password', name='password', required='')
         p
