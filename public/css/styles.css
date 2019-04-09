@@ -1,5 +1,5 @@
 /* Google Fonst */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=Margarine');
 
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: #fff;
 }
 
@@ -37,7 +37,8 @@ body.bg {
 }
 
 header {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Comfortaa', cursive;*/
   padding: 20px 0;
   background: #33eaff;
 }
@@ -88,6 +89,9 @@ header {
 .menu img {
   width: 20px;
   vertical-align: middle;
+  transition: all .2s;
+  transform: scale(1);
+
 }
 
 .menu img:hover {
@@ -104,6 +108,16 @@ header {
   border-radius: 4px;
   padding: 10px;
   display: none;
+}
+
+.menu a {
+  transition: all .2s;
+}
+
+.menu a:hover {
+  color: #333;
+  transition: all .2s;
+  transform: translate(8px, 0);
 }
 
 .open ul {
@@ -147,13 +161,14 @@ header {
     transition: all .2s;
 }
 
-.sign-in-up a:last-of-type:hover {
+.sign-in-up a[href='sign_up']:last-of-type:hover {
     transition: all .2s;
     color: #fff;
 }
 
 .bg-slider {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Comfortaa', cursive;*/
   /*background-image: url('../imgs/SplitShire.jpg'); */
   background: #33eaff;
 }
@@ -199,7 +214,7 @@ header {
 }
 
 .hiw-title {
-  font-family: 'Roboto Slab', serif;
+  /*font-family: 'Roboto Slab', serif;*/
   font-size: 23px;
   text-align: center;
   padding: 30px;

@@ -1,7 +1,8 @@
 const User = require('../lib/User');
 const cookieParser = require('cookie-parser');
+//const options = require('./options'); 
 
-const options = {};
+exports.options = {};
 
 module.exports = {
 
@@ -12,9 +13,8 @@ module.exports = {
 	//	}
 //	},
 
-	getMainPage: (req, res) => {
-		
-		res.render('./index', { username: options.username });
+	getMainPage: (req, res) => {		
+		res.render('./index', { username: exports.options.username });
 	},
 
 	signIn: (req, res) => {
@@ -26,11 +26,11 @@ module.exports = {
 			password: password
 		});
 
-		options.username = username;
+		exports.options.username = username;
 		res.cookie('username', username);
 
 		user.check(res, (err) => {
-			if (err) throw err;	
+			if (err) throw err;
 		});	
 	},
 

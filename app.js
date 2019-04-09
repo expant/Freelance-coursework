@@ -3,15 +3,17 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
+// routes ----------------------------------------
 const market = require('./routes/market');
 const submit = require('./routes/submit');
+const { getUserProfile } = require('./routes/userProfile');
 //const showAllFreelancers = require('./routes/showFreelancers');
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
-app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 
@@ -25,7 +27,9 @@ app.get('/market', market.tasks);
 
 app.get('/sign_in', (req, res) => {
     res.render('sign_in');
-})
+});
+
+app.get('/userProfile', getUserProfile);
 
 app.post('/sign_in', submit.signIn);
 
