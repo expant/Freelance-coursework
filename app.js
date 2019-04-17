@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 
 // routes ----------------------------------------
 const market = require('./routes/market');
-const submit = require('./routes/submit');
-const { getUserProfile } = require('./routes/userProfile');
+const authentication = require('./routes/authentication');
+//const { getUserProfile } = require('./routes/userProfile');
 //const showAllFreelancers = require('./routes/showFreelancers');
 
 const app = express();
@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.get('/', submit.getMainPage);
+app.get('/', authentication.getMainPage);
 
 app.get('/market', market.tasks);
 
@@ -29,17 +29,15 @@ app.get('/sign_in', (req, res) => {
     res.render('sign_in');
 });
 
-app.post('/sign_in', submit.signIn);
+app.post('/sign_in', authentication.signIn);
 
 app.get('/sign_up', (req, res) => {
     res.render('sign_up');
 });
 
-app.get('/userProfile', (req, res) => {
-    res.render('userProfile');  
-});
+app.get('/userProfile', authentication.getUserProfile);
 
-app.post('/sign_up', submit.signUp);
+app.post('/sign_up', authentication.signUp);
 
 //app.get('/freelancers', showAllFreelancers.users);
 

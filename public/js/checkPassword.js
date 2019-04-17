@@ -4,7 +4,7 @@ const
 	sub = document.querySelector('input[type=submit]'),
 	getForm = document.querySelector('.form');
 
-sub.addEventListener('click', (e) => {
+/*sub.addEventListener('click', (e) => {
 
 	e.preventDefault();
 
@@ -22,7 +22,7 @@ sub.addEventListener('click', (e) => {
 			alert( xhr.status + ': ' + xhr.statusText );
 		} 
 	}
-});
+});*/
 
 const addErr = (form) => {
 	console.log('Пароль не совпадает');
