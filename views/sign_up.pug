@@ -12,12 +12,12 @@ html(lang='en')
     // CSS
     link(rel='stylesheet', href='css/sign_in.css')
     // JS
-    script(src="../public/js/checkPassword.js" defer)
+    script(src="js/checkPassword.js" defer)
   body.page-sign-in
     .title-sign-in
       span Региcтрация
     .form
-      form(method='POST')
+      form(method='POST' class='person')
         p
           label(for='username') Имя пользователя 
         input(type='text', name='username', autofocus='autofocus', required='')
@@ -29,3 +29,4 @@ html(lang='en')
         input(type='password', name='passwordAgain', required='')
         input(type='submit', value='Зарегистрироваться')
     .margin
+   

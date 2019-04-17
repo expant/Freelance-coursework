@@ -5,5 +5,4 @@ const ul = document.querySelector('.menu ul')
 title.addEventListener('click', () => {
 	
 	menu.classList.toggle('open');
-
 });

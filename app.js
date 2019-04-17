@@ -29,12 +29,14 @@ app.get('/sign_in', (req, res) => {
     res.render('sign_in');
 });
 
-app.get('/userProfile', getUserProfile);
-
 app.post('/sign_in', submit.signIn);
 
 app.get('/sign_up', (req, res) => {
     res.render('sign_up');
+});
+
+app.get('/userProfile', (req, res) => {
+    res.render('userProfile');  
 });
 
 app.post('/sign_up', submit.signUp);
