@@ -1,0 +1,65 @@
+.user {
+    padding: 30px 50px;
+}
+
+.user-data {
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    background: #eee;
+}
+
+.user-data button {
+    padding: 10px 20px;
+    background: #33eaff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    transition: all .2s;
+}
+
+.user-data button:hover {
+    transition: all .2s;
+    background: #333;
+    cursor: pointer;
+}
+
+.user-data input {
+    padding: 5px 10px;
+    font-size: 17px;
+    margin-right: 20px;
+    border: none;
+    transition: all .5s;
+}
+
+.user-data button:active,
+.user-data button:focus,
+.user-data input:active,
+.user-data input:focus {
+    outline: none;
+}
+
+.user-data .cancel {
+    margin-left: 10px;
+}
+
+.title-profile {
+   padding: 0 0 10px 20px;
+}
+
+.name {
+    margin-right: auto;
+    font-size: 18px;
+}
+
+.hide-toChange {
+    display: none;
+}
+
+.show-toChange {
+    display: block;
+}

@@ -6,9 +6,12 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Биржа
     // CSS
-    link(rel='stylesheet', href='css/market.css')
+    link(rel='stylesheet', href='css/userProfile.css')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
+
+    // JS
+    script(src="js/toChangeName.js" defer)
   body.bg
     .sect-wrap.clearfix
       .wrapp.clearfix
@@ -18,8 +21,26 @@ html(lang='en')
             h1 Профиль
           .user
             if username
-              p Ваше имя - #{username}
-              p Возраст - #{age}
+              .title-profile Ваше имя
+              .user-data
+                .name #{username}
+                .hide-toChange
+                  form(action="/userProfile/name" method="POST")
+                    input(type="text" name="toChangeName" required='')
+                    button(type="submit" class="change") Изменить
+                    button(class="cancel") Отменить
+                div 
+                  button(type="submit" class="show-change") Изменить
+              .title-profile Возраст
+              .user-data
+                .name #{age}
+                .hide-toChange
+                  form(action="/userProfile/age" method="POST")
+                    input(type="text" name="toChangeAge" required='')
+                    button(type="submit" class="change") Изменить
+                    button(class="cancel") Отменить
+                div 
+                  button(type="submit" class="show-change") Изменить
             else 
-              p Ничего нет :(
+              div Ничего нет :(
                 

@@ -47,7 +47,6 @@ module.exports = {
 		});
 
 		options.username = username;
-		options.age = age;
 
 		user.save(res, (err) => {
 			if (err) throw err;
@@ -55,12 +54,13 @@ module.exports = {
 	},
 
 	getUserProfile: (req, res) => {
+
 		res.render('userProfile', {
 			username: options.username,
 			age: options.age
 		});
 		console.log(options.username);
 		console.log(options.age);
-  }
+  }		
 }
 	

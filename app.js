@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 // routes ----------------------------------------
 const market = require('./routes/market');
 const authentication = require('./routes/authentication');
+const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
 //const showAllFreelancers = require('./routes/showFreelancers');
 
@@ -37,7 +38,13 @@ app.get('/sign_up', (req, res) => {
 
 app.get('/userProfile', authentication.getUserProfile);
 
+app.post('/userProfile/:changeData', changeData);
+
 app.post('/sign_up', authentication.signUp);
+
+app.get('/createTask', (req, res) => {
+    res.render('createTask');
+});
 
 //app.get('/freelancers', showAllFreelancers.users);
 
