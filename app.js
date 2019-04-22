@@ -4,8 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 // routes ----------------------------------------
-const market = require('./routes/market');
 const authentication = require('./routes/authentication');
+const tasks = require('./routes/tasks');
 const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
 //const showAllFreelancers = require('./routes/showFreelancers');
@@ -24,7 +24,7 @@ app.set('view engine', 'pug');
 
 app.get('/', authentication.getMainPage);
 
-app.get('/market', market.tasks);
+app.get('/market', tasks.selectTasks);
 
 app.get('/sign_in', (req, res) => {
     res.render('sign_in');
@@ -45,6 +45,8 @@ app.post('/sign_up', authentication.signUp);
 app.get('/createTask', (req, res) => {
     res.render('createTask');
 });
+
+app.post('/createTask', tasks.createTask);
 
 //app.get('/freelancers', showAllFreelancers.users);
 

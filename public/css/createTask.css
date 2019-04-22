@@ -1,0 +1,58 @@
+.create-task-cont {
+    padding: 40px;
+}
+
+.create-task-cont form {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.create-task-cont input, 
+.create-task-cont textarea {
+    margin-bottom: 15px;
+    font-size: 17px;
+    padding: 5px;
+    border: 1px solid #CBF4F0;
+}
+
+.create-task-cont input:focus,
+.create-task-cont input:active, 
+.create-task-cont textarea:focus,
+.create-task-cont textarea:active {
+    outline: none;
+} 
+
+.create-task-cont textarea {
+    resize: none;
+    font-size: 15px;
+}
+
+.create-task-cont input[type="submit"] {
+    width: 200px;
+    background: #33eaff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: #fff;
+    transition: all .2s;
+}
+
+.create-task-cont input[type="submit"]:hover {
+    transition: all .2s;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.create-task-cont input[name="title"] {
+    font-size: 18px;
+    transition: all .2s;
+    border: none;
+}
+
+.create-task-cont input[name="title"]:hover,
+.create-task-cont input[name="title"]:focus {
+    font-size: 20px;
+    transition: all .2s;
+}
+

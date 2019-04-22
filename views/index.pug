@@ -36,8 +36,12 @@ html(lang='en')
           .title
             h1 Вы можете нанять фрилансера или можете сами найти работу
           .hire-or-become
-            a(href='#') Нанять фрилансера
-            a(href='#') Найти работу
+            if username
+              a(href='#') Нанять фрилансера
+              a(href='/market') Найти работу
+            else
+              a(href='#') Нанять фрилансера
+              a(href='/sign_in') Найти работу
     section.how-it-works.sect-wrap
       .wrapper.clearfix
         .hiw-title

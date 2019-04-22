@@ -6,6 +6,7 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Биржа
     // CSS
+    link(rel='stylesheet', href='css/createTask.css')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
 
@@ -17,6 +18,10 @@ html(lang='en')
         include sidebar
         .mainw.clearfix
           .tit
-            h1 Предложить задачу
-          .create-task
+            h1 Преджожить задачу
+          .create-task-cont
             form(method="POST")
+              input(type="text" placeholder="Заголовок" name="title" required)
+              textarea(name="text", cols="30", rows="10" placeholder="Текст" required)
+              input(type="text" name="price" placeholder="Цена" required)
+              input(type="submit" value="Предложить")
