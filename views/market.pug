@@ -34,7 +34,7 @@ html(lang='en')
             if tasks
               for task in tasks
                 .task
-                  a(href="/market/:id" class="task-head") #{task.title}
+                  a(href=`/market/${task.id}` class="task-head") #{task.title}
                   p.task-text #{task.text}
                   h4.price Цена: #{task.price} очка/ов
             else 

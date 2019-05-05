@@ -1,0 +1,62 @@
+.container {
+    width: 65%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.img_freelance {
+    background: url('../imgs/freelance_img.png') no-repeat;
+    background-position: left bottom;
+    background-size: 50px;
+}
+
+.task {
+    background: #fff;
+    padding: 40px;
+}
+
+.task p {
+    margin: 0 0 5px 8px;
+}
+
+.back {
+    float: right;
+    padding-top: 20px;
+    display: flex;
+}
+
+.back input {
+    margin-right: 10px;
+}
+
+.back a,
+.back input {
+    padding: 10px 30px;
+    background: #33eaff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    transition: all .2s;
+    text-decoration: none;
+}
+
+.back a:hover,
+.back input:hover {
+    transition: all .2s;
+    background: #333;
+    cursor: pointer;
+}
+
+.task-header,
+.task-text,
+.task-price {
+    padding: 20px;
+    background: #eee;
+    margin-bottom: 20px;
+}
+
+.task-header {
+    padding: 0 0 10px 20px;
+    background: #fff;
+}

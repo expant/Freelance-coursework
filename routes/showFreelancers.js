@@ -1,12 +1,11 @@
-const mysql = require('mysql');
-const client = require('../lib/createTable');
+const Users = require('../lib/Users');
 
-exports.users = (req, res) => {
-    client.query(`
-			SELECT name FROM users;
-    `, (err, result) => {
+module.exports = {
+	showAll: (req, res) => {
+		const users = new Users();
+
+		users.showAll(res, err => {
 			if (err) throw err;
-		});
-
-		res.render('./freelancers');
-};  
+		})
+	}
+}

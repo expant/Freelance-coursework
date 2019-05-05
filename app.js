@@ -55,7 +55,7 @@ app.get('/createTask', (req, res) => {
 
 app.post('/createTask', tasks.createTask);
 
-//app.get('/freelancers', showAllFreelancers.users);
+app.get('/freelancers', showAllFreelancers.users);
 
 app.listen(7500, 'localhost', () => {
     console.log('Сервер запущен!');

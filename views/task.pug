@@ -5,18 +5,27 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Биржа
-    // CSS
-    link(rel='stylesheet', href='css/market.css')
-    link(rel='stylesheet', href='css/navbar.css')
-    link(rel='stylesheet', href='css/styles.css')
+
+    base(href='/')
+    link(rel='stylesheet', type='text/css', href='css/styles.css')
+    link(rel='stylesheet', type='text/css', href='css/task.css')
   body.bg
-    .sect-wrap.clearfix
+    .container
       .wrapp.clearfix
         .mainw.clearfix
           .tit
-            h1 Задача
-					.task
-						if id 
-							h2 #{id}
-						else 
-							h2=Ничего
+            h1  Задача
+          .task.clearfix
+            .task-header
+              h2 #{title}
+            p Текст
+            .task-text
+              span #{text}
+            p Цена
+            .task-price
+              span #{price}
+            .back
+              form(method="POST")
+                input(type="submit" name="toRespond" value="Откликнуться")
+              a(href="market") Назад
+            .img_freelance
