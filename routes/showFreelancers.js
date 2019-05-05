@@ -6,6 +6,6 @@ module.exports = {
 
 		users.showAll(res, err => {
 			if (err) throw err;
-		})
+		});
 	}
 }

@@ -12,7 +12,7 @@ const authentication = require('./routes/authentication');
 const tasks = require('./routes/tasks');
 const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
-//const showAllFreelancers = require('./routes/showFreelancers');
+const showFreelancers = require('./routes/showFreelancers');
 
 // ---- middleware -------------------------------------
 app.use(express.urlencoded({ extended: true }));
@@ -55,7 +55,7 @@ app.get('/createTask', (req, res) => {
 
 app.post('/createTask', tasks.createTask);
 
-app.get('/freelancers', showAllFreelancers.users);
+app.get('/freelancers', showFreelancers.showAll);
 
 app.listen(7500, 'localhost', () => {
     console.log('Сервер запущен!');
