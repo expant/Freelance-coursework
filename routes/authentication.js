@@ -47,6 +47,7 @@ module.exports = {
 		});
 
 		options.username = username;
+		options.age = age;
 
 		user.save(res, (err) => {
 			if (err) throw err;

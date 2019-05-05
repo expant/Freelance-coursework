@@ -1,30 +1,37 @@
+// ---- connecting modules ----------------------------
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+//const session = require('express-session');
 
-// routes ----------------------------------------
+const app = express();
+
+// ----- connecting routes ----------------------------------------
 const authentication = require('./routes/authentication');
 const tasks = require('./routes/tasks');
 const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
 //const showAllFreelancers = require('./routes/showFreelancers');
 
-const app = express();
-
+// ---- middleware -------------------------------------
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
+//app.use(express.session());
 app.use(cookieParser());
 
 
-// Задаём опции -----------------------------------
+// ---- set options -----------------------------------
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// ---- using routes ------------------------------------
 app.get('/', authentication.getMainPage);
 
 app.get('/market', tasks.selectTasks);
+
+app.get('/market/:id', tasks.getTask);
 
 app.get('/sign_in', (req, res) => {
     res.render('sign_in');

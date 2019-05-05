@@ -11,17 +11,26 @@ module.exports = {
 			text: text,
 			price: price
 		});
-		
+
 		task.add(res, err => {
 			if (err) throw err;
 		});
 	},
 
 	selectTasks: (req, res) => {
-		const task = new Task({});
+		const task = new Task();
 
 		task.get(res, err => {
 			if (err) throw err;
 		});
+	},
+
+	getTask: (req, res) => {
+		const taskId = req.params.id;
+		const task = new Task({ id: taskId });
+
+		task.getTask(res, err => {
+			if (err) throw err;
+		})
 	}
 }
