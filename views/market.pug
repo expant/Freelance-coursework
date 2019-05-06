@@ -17,15 +17,8 @@ html(lang='en')
           .tit
             h1 Биржа
           .filter
-            h2 Фильтр
-            .categories
-              select#filt(name='filter')
-                option(value='Все категории') Все категории
-                option(value='Вёрстка') Вёрстка
-                option(value='front-end') Front-end
-                option(value='back-end') Back-end
             .budget
-              h3 Бюджет (руб.)
+              h3 Бюджет
               form(action='')
                 input(type='text', name='from')
                 input(type='text', name='to')
@@ -36,7 +29,7 @@ html(lang='en')
                 .task
                   a(href=`/market/${task.id}` class="task-head") #{task.title}
                   p.task-text #{task.text}
-                  h4.price Цена: #{task.price} очка/ов
+                  h4.price Цена: #{task.price}
             else 
               h3 Задач нет
 							

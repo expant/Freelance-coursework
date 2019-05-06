@@ -7,7 +7,7 @@ html(lang='en')
     title Freelance - зарабатывать просто
     // CSS
     link(rel='stylesheet', href='css/styles.css')
-    link(rel='stylesheets', href='css/freelancers')
+    link(rel="stylesheet", href="css/freelancers.css")
   body.bg
     .sect-wrap.clearfix
       .wrapp.clearfix
@@ -15,8 +15,14 @@ html(lang='en')
           .tit
             h1 Фрилансеры
           .freelancers
-            .back
-              a(href="/") Назад
+            .back-search
+              .back
+                a(href="/") Назад
+              .search
+                form(method="POST")
+                  p: label(for="findTheFreelancer") Имя фрилансера
+                  input(type="text" name="findTheFreelancer" required)
+                  input(type="submit" value="Найти")
             if freelancers
               for freelancer in freelancers
                 .freelancer
