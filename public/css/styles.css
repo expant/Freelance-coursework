@@ -260,3 +260,31 @@ header {
   color: #fff;
   letter-spacing: 3px;
 }
+
+footer.describe {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background: #2f3542;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer.describe h3 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: .5px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+footer.describe p {
+  color: #2196f3;
+  margin-left: 15px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+footer.describe a {
+  color: #2196f3;
+  text-decoration: none;
+}
