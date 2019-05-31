@@ -2,10 +2,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cookieParser = require('cookie-parser');
-//const session = require('express-session');
+const session = require('express-session');
 
 const app = express();
+const jsonParser = express.json();
 
 // ----- connecting routes ----------------------------------------
 const authentication = require('./routes/authentication');
@@ -18,8 +18,10 @@ const showFreelancers = require('./routes/showFreelancers');
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
-//app.use(express.session());
-app.use(cookieParser());
+app.use(session({
+    secret: 'key is supersecret'
+}));
+
 
 
 // ---- set options -----------------------------------
@@ -37,7 +39,7 @@ app.get('/sign_in', (req, res) => {
     res.render('sign_in');
 });
 
-app.post('/sign_in', authentication.signIn);
+app.post('/sign_in', jsonParser, authentication.signIn);
 
 app.get('/sign_up', (req, res) => {
     res.render('sign_up');
@@ -45,12 +47,14 @@ app.get('/sign_up', (req, res) => {
 
 app.get('/userProfile', authentication.getUserProfile);
 
-app.post('/userProfile/:changeData', changeData);
-
-app.post('/sign_up', authentication.signUp);
+app.post('/sign_up', jsonParser, authentication.signUp);
 
 app.get('/createTask', (req, res) => {
-    res.render('createTask');
+    if (req.session.username) {
+        res.render('createTask');
+    } else {
+        res.redirect('/sign_in');
+    }
 });
 
 app.post('/createTask', tasks.createTask);

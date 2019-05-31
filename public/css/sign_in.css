@@ -60,8 +60,9 @@
     outline: none;
   }
   
-  .form input[type="submit"] {
+  .form button {
     width: auto;
+    font-size: 18px;
     padding: 5px 40px;
     margin-bottom: 0;
     box-shadow: none;
@@ -70,7 +71,7 @@
     color: #333;
   }
   
-  .form input[type="submit"]:hover {
+  .form button:hover {
     transition: all .2s;
     background: #00bcd4;
     color: #fff;

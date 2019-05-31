@@ -1,34 +1,43 @@
-const 
-	password = document.querySelector('input[name=password]'),
-	passwordAgain = document.querySelector('input[name=passwordAgain]'),
-	sub = document.querySelector('input[type=submit]'),
-	getForm = document.querySelector('.form');
+(() => {
+	const 
+		username = document.querySelector('input[name=username]'),
+		password = document.querySelector('input[name=password]'),
+		passwordAgain = document.querySelector('input[name=passwordAgain]'),
+		sub = document.querySelector('.form button'),
+		getForm = document.querySelector('.form');
 
-/*sub.addEventListener('click', (e) => {
+	sub.addEventListener('click', () => {
 
-	e.preventDefault();
+		const userData = {
+			username: username.value,
+			password: password.value,
+			passwordAgain: passwordAgain.value
+		}
 
-	if (password.value !== passwordAgain.value) {
-		addErr(getForm);
-	} else {
-		const xhr = new XMLHttpRequest();
-		const formData = new FormData(document.forms.person);
+		if (userData.username === '') {
 
-		xhr.open('POST', '/sign_up', true);
+			username.style.borderBottom = '4px solid red';
 
-		xhr.send(formData);
+		} else if (userData.password !== userData.passwordAgain) {
 
-		if (xhr.status != 200) {
-			alert( xhr.status + ': ' + xhr.statusText );
-		} 
-	}
-});*/
+			password.style.borderBottom = '4px solid red';
+			passwordAgain.style.borderBottom = '4px solid red';
 
-const addErr = (form) => {
-	console.log('Пароль не совпадает');
+		} else {
+			let user = JSON.stringify(userData);
 
-	const div = document.createElement('div');
-	div.textContent = 'Пароль не совпадает!';
+			const xhr = new XMLHttpRequest();		
+			xhr.open('POST', '/sign_up', true);
+			xhr.setRequestHeader("Content-Type", "application/json");	
+
+			xhr.addEventListener('load', () => {
+				let userFromServer = JSON.parse(xhr.response);
+				console.log(userFromServer.newUsername);
+				window.location.replace('/');
+			});
+
+			xhr.send(user);
+		}
+	});
+})();
 	
-	form.appendChild(div);
-}

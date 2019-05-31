@@ -63,3 +63,24 @@
 .show-toChange {
     display: block;
 }
+
+.avatar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.background-avatar {
+    width: 100px;
+    height: 100px;
+    background: #eee;
+}
+
+.load-from-file {
+    margin-left: 20px;
+}
+
+.load-from-file p {
+    margin-bottom: 10px;
+}

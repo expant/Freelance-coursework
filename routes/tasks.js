@@ -2,19 +2,21 @@ const Task = require('../lib/Task');
 
 module.exports = {
 	createTask: (req, res) => {
-		const title = req.body.title;
-		const text = req.body.text;
-		const price = req.body.price;
+			const dataOftask = {
+				title: req.body.title,
+				text: req.body.text,
+				price: req.body.price
+			}
 
-		const task = new Task({
-			title: title,
-			text: text,
-			price: price
-		});
+			const task = new Task({
+				title: dataOftask.title,
+				text: dataOftask.text,
+				price: dataOftask.price
+			});
 
-		task.add(res, err => {
-			if (err) throw err;
-		});
+			task.add(res, err => {
+				if (err) throw err;
+			});	
 	},
 
 	selectTasks: (req, res) => {

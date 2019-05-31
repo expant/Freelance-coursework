@@ -1,33 +1,26 @@
 const User = require('../lib/User');
-const cookieParser = require('cookie-parser');
-//const options = require('./options'); 
-
-const options = {};
 
 module.exports = {
 
-//	options: (req) => {
-	//	return {
-	//		username: req.body.username,
-	//		password: req.body.password
-	//	}
-//	},
-
 	getMainPage: (req, res) => {		
-		res.render('index', { username: options.username });
+		if (req.session.username) {
+			const username = req.session.username;
+			res.render('index', { username });
+		} else {
+			res.render('index');
+		}
 	},
 
 	signIn: (req, res) => {
-		const username = req.body.username;
-		const password = req.body.password;
+		const dataOfUsers = {
+			username: req.body.username,
+			password: req.body.password
+		}
 
 		const user = new User({
-			username: username,
-			password: password
+			username: dataOfUsers.username,
+			password: dataOfUsers.password
 		});
-
-		options.username = username
-		res.cookie('username', username);
 
 		user.check(res, (err) => {
 			if (err) throw err;
@@ -35,33 +28,32 @@ module.exports = {
 	},
 
 	signUp: (req, res) => {
-		const username = req.body.username;
-		const password = req.body.password;
-		const passwordAgain = req.body.passwordAgain;
-		const age = req.body.age;
+
+		if (!req.body) return res.sendStatus(400);
+
+		const dataOfUsers = {
+			username: req.body.username,
+			password: req.body.password
+		}
 		
 		const user = new User({
-			username: username,
-			password: password,
-			age: age
+			username: dataOfUsers.username,
+			password: dataOfUsers.password
 		});
 
-		options.username = username;
-		options.age = age;
-
-		user.save(res, (err) => {
+		user.save(req, res, (err) => {
 			if (err) throw err;
 		});
 	},
 
 	getUserProfile: (req, res) => {
-
-		res.render('userProfile', {
-			username: options.username,
-			age: options.age
-		});
-		console.log(options.username);
-		console.log(options.age);
+		if (req.session.username) {
+			const username = req.session.username;
+			res.render('userProfile', { username });
+		} else {
+			res.redirect('/sign_in');
+		}
+		
   }		
 }
 	

@@ -17,19 +17,15 @@ html(lang='en')
     .title-sign-in
       span Региcтрация
     .form
-      form(method='POST' class='person')
-        p
-          label(for='username') Имя пользователя 
-        input(type='text', name='username', autofocus='autofocus', required='')
-        p.pass-err
-          label(for='password') Пароль
-        input(type='password', name='password', required='')
-        p
-          label(for='password') Повторите пароль
-        input(type='password', name='passwordAgain', required='')
-        p
-          label(for='age') Возраст
-        input(type='text', name='age', required='')
-        input(type='submit', value='Зарегистрироваться')
-    .margin
+      p
+        label(for='username') Имя пользователя 
+      input(type='text', name='username', autofocus='autofocus', required='')
+      p.pass-err
+        label(for='password') Пароль
+      input(type='password', name='password', required='')
+      p
+        label(for='password') Повторите пароль
+      input(type='password', name='passwordAgain', required='')
+      button() Зарегистрироваться
+  .margin
    

@@ -11,7 +11,7 @@ html(lang='en')
     link(rel='stylesheet', href='css/styles.css')
 
     // JS
-    script(src="js/toChangeName.js" defer)
+    script(src="js/changeName.js" defer)
   body.bg
     .sect-wrap.clearfix
       .wrapp.clearfix
@@ -21,26 +21,21 @@ html(lang='en')
             h1 Профиль
           .user
             if username
+              .avatar
+                .background-avatar
+                .load-from-file
+                  p: label(for="avatar") Загрузить аватар
+                  input(type="file" name="avatar" accept="image/*")
+                  button Загрузить 
               .title-profile Ваше имя
               .user-data
                 .name #{username}
                 .hide-toChange
-                  form(action="/userProfile/name" method="POST")
-                    input(type="text" name="toChangeName" required='')
-                    button(type="submit" class="change") Изменить
-                    button(class="cancel") Отменить
+                  input(type="text" name="toChangeName" required='')
+                  button(class="change") Изменить
+                  button(class="cancel") Отменить
                 div 
-                  button(type="submit" class="show-change") Изменить
-              .title-profile Возраст
-              .user-data
-                .name #{age}
-                .hide-toChange
-                  form(action="/userProfile/age" method="POST")
-                    input(type="text" name="toChangeAge" required='')
-                    button(type="submit" class="change") Изменить
-                    button(class="cancel") Отменить
-                div 
-                  button(type="submit" class="show-change") Изменить
+                  button(class="show-change") Изменить
             else 
               div Ничего нет :(
                 
