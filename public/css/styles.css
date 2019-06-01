@@ -133,9 +133,7 @@ header {
 .sign-in-up {
   float: right;
   margin-top: 4px;
-}
-
-.sign_absolute {
+  margin-left: 1070px;
   position: absolute;
 }
 

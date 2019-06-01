@@ -43,7 +43,7 @@
     outline: none;
 }
 
-.user-data .cancel {
+.user-data #cancel {
     margin-left: 10px;
 }
 

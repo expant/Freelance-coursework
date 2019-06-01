@@ -1,9 +1,9 @@
 (() => {
 	const showChange = document.querySelector('.show-change');
   const hideToChange = document.querySelector('.hide-toChange');
-	const cancel = document.querySelector('.cancel');
+	const cancel = document.querySelector('#cancel');
 	const newName = document.querySelector('[name=toChangeName]');
-	const change = document.querySelector('.change');
+	const change = document.querySelector('#change');
 
   showChange.addEventListener('click', () => {
     showChange.hidden = true;
@@ -17,8 +17,11 @@
 	});
 	
 	change.addEventListener('click', () => {
-		if (newName.value !== '') {
+		console.log('Click change!!!');
+		if (newName.value.length > 0) {
 			let user = JSON.stringify({ newUsername: newName.value });
+
+			console.log(`new Username : ${newName.value}`);
 
 			const xhr = new XMLHttpRequest();
 			xhr.open('POST', '/userProfile', true);
@@ -26,10 +29,17 @@
 
 			xhr.addEventListener('load', () => {
 				let userFromServer = JSON.parse(xhr.response);
-				console.log(userFromServer.newUsername);
-				window.location.replace('/');
-			});
+				console.log(`
+					Data sucessfully changed! 
+					New name: ${userFromServer.newUsername}
+				`);
 
+				window.location.replace('/userProfile');
+			});
+			xhr.send(user);
+
+		} else {
+			console.log('Изменение не удалось');
 		}
 	});
 })();	

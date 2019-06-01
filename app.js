@@ -9,7 +9,7 @@ const jsonParser = express.json();
 
 // ----- connecting routes ---------------------------------------
 const authentication = require('./routes/authentication');
-const { getUserProfile } = require('./routes/userProfile');
+const { getUserProfile, changeTheData } = require('./routes/userProfile');
 const tasks = require('./routes/tasks');
 //const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
@@ -55,6 +55,8 @@ app.get('/sign_up', (req, res) => {
 });
 
 app.get('/userProfile', getUserProfile);
+
+app.post('/userProfile', jsonParser, changeTheData);
 
 app.post('/sign_up', jsonParser, authentication.signUp);
 

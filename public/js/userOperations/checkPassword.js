@@ -32,8 +32,13 @@
 
 			xhr.addEventListener('load', () => {
 				let userFromServer = JSON.parse(xhr.response);
-				console.log(userFromServer.newUsername);
-				window.location.replace('/');
+
+				if (userFromServer === 'Такое имя уже существует') {
+					console.log(userFromServer)
+				} else {
+					console.log(userFromServer.username);
+					window.location.replace('/');
+				}	
 			});
 
 			xhr.send(user);

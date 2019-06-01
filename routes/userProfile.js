@@ -8,5 +8,22 @@ module.exports = {
 		} else {
 			res.redirect('/sign_in');
 		}	
-  }		
+	},
+	
+	changeTheData: (req, res) => {
+		if (req.body.newUsername) {	
+
+			const newUsername = req.body.newUsername;
+			const username = req.session.username;
+
+			const user = new User({
+				newUsername,
+				username
+			});
+
+			user.update(req, res, (err) => {
+				if (err) throw err;
+			});
+		}
+	}
 }
