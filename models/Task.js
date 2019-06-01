@@ -15,7 +15,6 @@ class Task {
 		
 		client.query(query, (err, result) => {
 			if (err) throw err;
-			alert("Задача успешно добавилась..")
 			res.redirect('/createTask');
 		});
 	}

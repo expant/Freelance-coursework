@@ -20,11 +20,16 @@ module.exports = {
 	},
 
 	selectTasks: (req, res) => {
-		const task = new Task();
+		if (req.session.username) {
+			const task = new Task();
 
-		task.get(res, err => {
-			if (err) throw err;
-		});
+			task.get(res, err => {
+				if (err) throw err;
+			});
+		} else {
+			res.redirect('/sign_in');
+		}
+			
 	},
 
 	getTask: (req, res) => {

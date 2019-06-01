@@ -99,10 +99,9 @@ header {
 }
 
 .menu ul {
-  right: 30px;
-  position: absolute;
+  right: 90px;
+  position: relative;
   margin-top: 20px;
-  margin-right: 20px;
   list-style: none;
   background: #eee;
   border-radius: 4px;
@@ -110,14 +109,21 @@ header {
   display: none;
 }
 
+.menu #exit,
 .menu a {
   transition: all .2s;
+  background: #eee;
+  border: none;
+  color: #000;
+  font-size: 17px;
+  margin-left: 10px;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu #exit:hover {
   color: #333;
   transition: all .2s;
-  transform: translate(8px, 0);
+  cursor: pointer;
 }
 
 .open ul {
@@ -125,8 +131,12 @@ header {
 }
 
 .sign-in-up {
-    float: right;
-    margin-top: 4px;
+  float: right;
+  margin-top: 4px;
+}
+
+.sign_absolute {
+  position: absolute;
 }
 
 .sign-in-up .login {

@@ -9,6 +9,7 @@ html(lang='en')
     link(rel='stylesheet', href='css/styles.css')
     // JS
     script(src="js/menu.js" defer)
+    script(src="js/userOperations/logout.js" defer)
   body
     header
       .wrapper.clearfix
@@ -16,20 +17,22 @@ html(lang='en')
           span
             a(href='/') Freelance
         .sign-in-up
-          if username
-            span.login #{username}
-            .menu#nav-menu 
-              span.title-nav
-                img(src="icons/menu.svg", alt="menu")
-              ul
-                li: a(href="/userProfile") Мой профиль
-                li: a(href="/market") Биржа
-                li: a(href="") Мои диалоги
-                li: a(href="") Мои заказы
-          else 
-            a(href='sign_in') Войти
-            span /
-            a(href='sign_up') Зарегистрироваться
+          .sign_absolute
+            if username
+              span.login #{username}
+              .menu#nav-menu 
+                span.title-nav
+                  img(src="icons/menu.svg", alt="menu")
+                ul
+                  li: a(href="/userProfile") Мой профиль
+                  li: a(href="/market") Биржа
+                  li: a(href="") Мои диалоги
+                  li: a(href="") Мои заказы
+                  li: button(id="exit") Выйти
+            else 
+              a(href='sign_in') Войти
+              span /
+              a(href='sign_up') Зарегистрироваться
     section.bg-slider
       .sect-wrap
         .wrapper.clearfix.img_png-sect

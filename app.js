@@ -30,7 +30,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // ---- using routes ------------------------------------
-app.get('/', authentication.getMainPage);
+app.get('/', jsonParser, authentication.getMainPage);
+
+app.post('/', jsonParser, (req, res) => {
+    if (req.body.exit === 'exit') {
+        req.session.destroy(() => {
+            res.json(req.body);
+        });
+    }
+});
 
 app.get('/market', tasks.selectTasks);
 
