@@ -1,11 +1,12 @@
-const User = require('../lib/User');
-const options = require('./authentication');
+const User = require('../models/User');
 
 module.exports = {
   getUserProfile: (req, res) => {
-		res.render('userProfile', {
-			username: options.username
-		});
-		console.log(options.username);
-  }
+		if (req.session.username) {
+			const username = req.session.username;
+			res.render('userProfile', { username });
+		} else {
+			res.redirect('/sign_in');
+		}	
+  }		
 }

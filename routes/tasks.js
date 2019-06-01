@@ -1,4 +1,4 @@
-const Task = require('../lib/Task');
+const Task = require('../models/Task');
 
 module.exports = {
 	createTask: (req, res) => {

@@ -1,4 +1,4 @@
-const User = require('../lib/User');
+const User = require('../models/User');
 
 module.exports = {
 
@@ -22,7 +22,7 @@ module.exports = {
 			password: dataOfUsers.password
 		});
 
-		user.check(res, (err) => {
+		user.check(req, res, (err) => {
 			if (err) throw err;
 		});	
 	},
@@ -44,16 +44,6 @@ module.exports = {
 		user.save(req, res, (err) => {
 			if (err) throw err;
 		});
-	},
-
-	getUserProfile: (req, res) => {
-		if (req.session.username) {
-			const username = req.session.username;
-			res.render('userProfile', { username });
-		} else {
-			res.redirect('/sign_in');
-		}
-		
-  }		
+	}
 }
 	

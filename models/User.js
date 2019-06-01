@@ -1,4 +1,4 @@
-const client = require('./db');
+const client = require('../config/db');
 
 class User {
   constructor(obj) {
@@ -14,18 +14,17 @@ class User {
       AND password = '${this.password}'
     `;
 
-    client.query(query, (err, result) => {
-      if (err) throw err;
-      
-        if (result[0].name === undefined && result[0].password === undefined) {
-          res.json({
-            error: 'Данные отсутствуют'
-          });
-        } else {
-          if (this.username === result[0].name && this.password === result[0].password) {
-            res.json(req.body);
-          }
+    client.query(query, (err, result) => {   
+      if (result[0].name === undefined && result[0].password === undefined) {
+        res.json({
+          error: 'Данные отсутствуют'
+        });
+      } else {
+        if (this.username === result[0].name && this.password === result[0].password) {
+          req.session.username = this.username;
+          res.json(req.body);
         }
+      }
     });     
   }
 

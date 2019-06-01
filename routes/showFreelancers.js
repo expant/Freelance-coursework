@@ -1,4 +1,4 @@
-const Users = require('../lib/Users');
+const Users = require('../models/Users');
 
 module.exports = {
 	showAll: (req, res) => {

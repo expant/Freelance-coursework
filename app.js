@@ -7,10 +7,11 @@ const session = require('express-session');
 const app = express();
 const jsonParser = express.json();
 
-// ----- connecting routes ----------------------------------------
+// ----- connecting routes ---------------------------------------
 const authentication = require('./routes/authentication');
+const { getUserProfile } = require('./routes/userProfile');
 const tasks = require('./routes/tasks');
-const { changeData } = require('./routes/changeUserData');
+//const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
 const showFreelancers = require('./routes/showFreelancers');
 
@@ -45,7 +46,7 @@ app.get('/sign_up', (req, res) => {
     res.render('sign_up');
 });
 
-app.get('/userProfile', authentication.getUserProfile);
+app.get('/userProfile', getUserProfile);
 
 app.post('/sign_up', jsonParser, authentication.signUp);
 

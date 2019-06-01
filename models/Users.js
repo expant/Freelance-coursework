@@ -1,4 +1,4 @@
-const client = require('./db');
+const client = require('../config/db');
 
 class Users {
   constructor(obj) {
@@ -9,7 +9,7 @@ class Users {
 
   showAll(res, cb) {
 		let query = `
-			SELECT id,name,age FROM	users;
+			SELECT id,name FROM	users;
 		`;
 
 		client.query(query, (err, result) => {
