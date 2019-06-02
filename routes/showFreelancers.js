@@ -4,7 +4,7 @@ module.exports = {
 	showAll: (req, res) => {
 		const users = new Users();
 
-		users.showAll(res, err => {
+		users.showAll(req, res, err => {
 			if (err) throw err;
 		});
 	}

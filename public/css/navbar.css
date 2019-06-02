@@ -9,30 +9,21 @@ aside.sidebar {
 
 .nav li {
     list-style: none;
-    border-bottom: 2px solid #33eaff;
-    background: #333333;
+    border-bottom: 2px solid #F5F5F5; 
+    background: #4FC3F7;
     transition: all .2s;
     transform: translate(0, 0);
 }
 
 .nav .create-task {
     margin-top: 10px;
-    background: #eee;
+    background: #333;
+    text-align: center;
 }
 
-.nav .create-task a {
-    transition: all .2s;
-    transform: translate(8px, 0);  
-    color: #000;
-}
-
-.nav .create-task:hover {
-    background: #eee;
-}
-
-.nav li:hover {
-    background: #424242;
-}
+/*.nav .create-task:hover {
+    
+}*/
 
 .nav a {
     display: inline-block;
@@ -48,10 +39,16 @@ aside.sidebar {
     transform: translate(8px, 0);  
 }
 
+.nav .create-task a {
+    transition: all .2s;
+    transform: translate(0, 0);
+    color: #fff;
+}
+
 .mainw {
     width: 78%;
     background: #fff;
-    box-shadow: 0 0 25px -8px #000;
+    box-shadow: 0 0 20px -10px #000;
     border-radius: 6px;
     float: right;
 }

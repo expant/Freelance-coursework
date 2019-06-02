@@ -10,6 +10,19 @@ html(lang='en')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
   body.bg
+    header
+      .wrapper.clearfix
+        .logo
+          span
+            a(href='/') Freelance
+        .sign-in-up
+          .sign_absolute
+            if username
+              span.login #{username}
+            else 
+              a(href='sign_in') Войти
+              span /
+              a(href='sign_up') Зарегистрироваться
     .sect-wrap.clearfix
       .wrapp.clearfix
         include sidebar
@@ -29,8 +42,10 @@ html(lang='en')
                 .task
                   a(href=`/market/${task.id}` class="task-head") #{task.title}
                   p.task-text #{task.text}
-                  h4.price Цена: #{task.price}
-                  p.name #{task.employerName}
+                  .flex-container
+                    p.price 
+                      span.bg-price $#{task.price}
+                    p.name #{task.username}
             else 
               h3 Задач нет
 							

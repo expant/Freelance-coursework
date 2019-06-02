@@ -13,6 +13,19 @@ html(lang='en')
     // JS
     script(src="js/toChangeName.js" defer)
   body.bg
+    header
+      .wrapper.clearfix
+        .logo
+          span
+            a(href='/') Freelance
+        .sign-in-up
+          .sign_absolute
+            if username
+              span.login #{username}
+            else 
+              a(href='sign_in') Войти
+              span /
+              a(href='sign_up') Зарегистрироваться
     .sect-wrap.clearfix
       .wrapp.clearfix
         include sidebar

@@ -7,14 +7,18 @@ class Users {
     }
   }
 
-  showAll(res, cb) {
+  showAll(req, res, cb) {
 		let query = `
 			SELECT id,name FROM	users;
 		`;
 
 		client.query(query, (err, result) => {
-			if (err) throw err;
-			res.render('../views/freelancers.pug', { freelancers: result });
+      if (err) throw err;
+      const username = req.session.username;
+			res.render('../views/freelancers.pug', { 
+        freelancers: result,
+        username
+      });
 		});
   }
 }

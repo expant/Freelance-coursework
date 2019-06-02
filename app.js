@@ -62,7 +62,8 @@ app.post('/sign_up', jsonParser, authentication.signUp);
 
 app.get('/createTask', (req, res) => {
     if (req.session.username) {
-        res.render('createTask');
+        const username = req.session.username;
+        res.render('createTask', { username });
     } else {
         res.redirect('/sign_in');
     }

@@ -8,25 +8,52 @@ class Task {
 	}
 	
 	add(res, cb) {
-		let query = `
-      INSERT INTO tasks (title, text, price, employerName) 
-      VALUES ('${this.title}', '${this.text}', '${this.price}', '${this.name}'); 
-		`;
-		
-		client.query(query, (err, result) => {
-			if (err) throw err;
-			res.redirect('/createTask');
+		client.query(`
+			SELECT id FROM users
+			WHERE name = '${this.name}'
+		`, (err, result) => {
+			const userId = result[0].id;
+
+			let query = `
+				INSERT INTO tasks (title, text, price, user_id) 
+				VALUES ('${this.title}', '${this.text}', '${this.price}', '${userId}'); 
+			`;
+
+			client.query(query, (err, result) => {
+				if (err) throw err;
+				res.redirect('/createTask');
+			});
 		});
 	}
 
-	get(res, cb) {
-		let query = `
-      SELECT * FROM tasks;
-		`;
-
-		client.query(query, (err, result) => {
+	get(req, res, cb) {
+		client.query(`
+			SELECT * FROM tasks ORDER BY id DESC;
+		`, (err, result) => {
 			if (err) throw err;
-			res.render('../views/market.pug', { tasks: result });
+			const taskResult = result;
+			
+			client.query(`
+				SELECT * FROM users;
+			`, (err, result) => {
+				if (err) throw err;
+				const userResult = result;
+
+				userResult.forEach(user => {
+					taskResult.forEach(task => {
+						if (task.user_id === user.id) {
+							task.username = user.name;
+						}
+					});
+				});
+
+				const username = req.session.username;
+
+				res.render('../views/market.pug', { 
+					tasks: taskResult,
+					username
+				});
+			});
 		});
 	}
 

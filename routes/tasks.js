@@ -23,10 +23,10 @@ module.exports = {
 	},
 
 	selectTasks: (req, res) => {
-		if (req.session.username) {
+		if (req.session.username) {	
 			const task = new Task();
 
-			task.get(res, err => {
+			task.get(req, res, err => {
 				if (err) throw err;
 			});
 		} else {

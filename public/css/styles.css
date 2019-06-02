@@ -21,7 +21,7 @@ body {
 }
 
 body.bg {
-  background: #33eaff;
+  background: #F5F5F5;
 }
 
 .sect-wrap {
@@ -40,7 +40,7 @@ header {
   font-family: 'Montserrat', sans-serif;
   /*font-family: 'Comfortaa', cursive;*/
   padding: 20px 0;
-  background: #33eaff;
+  background: #333;
 }
 
 .wrapper {
@@ -81,7 +81,7 @@ header {
   font-style: italic;
   font-family: 'Margarine', cursive;
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 .menu { float: right; }
@@ -101,10 +101,9 @@ header {
 .menu ul {
   right: 90px;
   position: relative;
-  margin-top: 20px;
+  margin-top: 28px;
   list-style: none;
-  background: #eee;
-  border-radius: 4px;
+  background: #333;
   padding: 10px;
   display: none;
 }
@@ -112,9 +111,9 @@ header {
 .menu #exit,
 .menu a {
   transition: all .2s;
-  background: #eee;
   border: none;
-  color: #000;
+  background: #333;
+  color: #fff;
   font-size: 17px;
   margin-left: 10px;
 }
@@ -133,7 +132,7 @@ header {
 .sign-in-up {
   float: right;
   margin-top: 4px;
-  margin-left: 1070px;
+  margin-left: 1000px;
   position: absolute;
 }
 
@@ -143,11 +142,11 @@ header {
 }
 
 .sign-in-up span {
-    color: #333;
+    color: #fff;
 }
 
 .sign-in-up a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -155,12 +154,12 @@ header {
   padding: 0px;
   margin-right: 10px;
   transition: all .2s;
-  color: #333;
+  color: #fff;
 }
 
 .sign-in-up a:first-of-type:hover {
   transition: all .2s;
-  color: #000;
+  color: #eee;
 }
 
 .sign-in-up a:last-of-type {
@@ -227,9 +226,9 @@ header {
   text-align: center;
   padding: 30px;
   margin-bottom: 30px;
-  background: #eee;
+  background: #333;
   border-radius: 0 0 8px 8px;
-  color: #333;
+  color: #fff;
 }
 
 .hiw-img img {
@@ -264,7 +263,7 @@ header {
 
 .tit h1 {
   padding: 30px 40px;
-  background: #333333;
+  background: #333;
   color: #fff;
   letter-spacing: 3px;
 }

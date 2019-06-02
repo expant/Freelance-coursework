@@ -6,6 +6,7 @@
 	const change = document.querySelector('#change');
 
 	const name = document.querySelector('.name');
+	const login = document.querySelector('.login');
 	const message = document.querySelector('.message');
 
   showChange.addEventListener('click', () => {
@@ -45,6 +46,7 @@
 						New name: ${userFromServer.newUsername}
 					`);
 					name.textContent = userFromServer.newUsername;
+					login.textContent = userFromServer.newUsername;
 					message.textContent = 'Имя успешно изменено';
 					setTimeout(() => {
 						message.textContent = '';
