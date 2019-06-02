@@ -19,7 +19,8 @@ html(lang='en')
     .form
       p
         label(for='username') Имя пользователя 
-      input(type='text', name='username', autofocus='autofocus', required='')
+      input(type='text', name='username', class='username', autofocus='autofocus', required='')
+      #err
       p.pass-err
         label(for='password') Пароль
       input(type='password', name='password', required='')

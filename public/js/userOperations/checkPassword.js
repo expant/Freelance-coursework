@@ -6,6 +6,8 @@
 		sub = document.querySelector('.form button'),
 		getForm = document.querySelector('.form');
 
+	const err = document.querySelector('#err');
+
 	sub.addEventListener('click', () => {
 
 		const userData = {
@@ -33,8 +35,10 @@
 			xhr.addEventListener('load', () => {
 				let userFromServer = JSON.parse(xhr.response);
 
-				if (userFromServer === 'Такое имя уже существует') {
+				if (userFromServer === 'Имя уже существует') {
 					console.log(userFromServer)
+					err.textContent = userFromServer;
+		
 				} else {
 					console.log(userFromServer.username);
 					window.location.replace('/');

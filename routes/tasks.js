@@ -2,21 +2,24 @@ const Task = require('../models/Task');
 
 module.exports = {
 	createTask: (req, res) => {
-			const dataOftask = {
-				title: req.body.title,
-				text: req.body.text,
-				price: req.body.price
-			}
+		const username = req.session.username;
+		const dataOftask = {
+			title: req.body.title,
+			text: req.body.text,
+			price: req.body.price,
+			name: username
+		}
 
-			const task = new Task({
-				title: dataOftask.title,
-				text: dataOftask.text,
-				price: dataOftask.price
-			});
+		const task = new Task({
+			title: dataOftask.title,
+			text: dataOftask.text,
+			price: dataOftask.price,
+			name: dataOftask.name
+		});
 
-			task.add(res, err => {
-				if (err) throw err;
-			});	
+		task.add(res, err => {
+			if (err) throw err;
+		});	
 	},
 
 	selectTasks: (req, res) => {

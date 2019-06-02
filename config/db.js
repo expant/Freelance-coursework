@@ -30,7 +30,10 @@ client.connect((err) => {
 			title VARCHAR(100),
 			text VARCHAR(2000),
 			price VARCHAR(20),
-			employer VARCHAR(20)
+			employerName VARCHAR(20),
+			FOREIGN KEY (employerName) 
+				REFERENCES users (name) 
+					ON DELETE CASCADE
 		)`;
 
 	client.query(sqlTasks, (err, result) => {

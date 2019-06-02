@@ -9,8 +9,8 @@ class Task {
 	
 	add(res, cb) {
 		let query = `
-      INSERT INTO tasks (title, text, price) 
-      VALUES ('${this.title}', '${this.text}', '${this.price}'); 
+      INSERT INTO tasks (title, text, price, employerName) 
+      VALUES ('${this.title}', '${this.text}', '${this.price}', '${this.name}'); 
 		`;
 		
 		client.query(query, (err, result) => {

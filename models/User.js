@@ -15,17 +15,18 @@ class User {
     `;
 
     client.query(query, (err, result) => {   
-      if (result[0].name === undefined && result[0].password === undefined) {
-        res.json({
-          error: 'Данные отсутствуют'
-        });
+      if (err) {
+        console.log(err.code);
+        if (result[0].name === undefined && result[0].password === undefined) {
+          res.json('Неверное имя пользователя или неверный пароль');
+        }
       } else {
         if (this.username === result[0].name && this.password === result[0].password) {
           req.session.username = this.username;
           res.json(req.body);
         }
-      }
-    });     
+      }     
+    });
   }
 
   save(req, res, cb) {
@@ -37,7 +38,7 @@ class User {
 		client.query(query, (err, result) => {
       if (err) {
         if (err.code === 'ER_DUP_ENTRY') {
-          res.json('Такое имя уже существует');
+          res.json('Имя уже существует');
         } 
       } else {
         req.session.username = this.username;
@@ -54,10 +55,15 @@ class User {
     `;
 
     client.query(query, (err, result) => {
-      if (err) throw err;
+      if (err) {
+        if (err.code === 'ER_DUP_ENTRY') {
+          res.json('Имя уже существует');
+        }
+      } else {
         req.session.username = this.newUsername;
         console.log(req.session.username);
         res.json(req.body);
+      }
     });
   }
 }

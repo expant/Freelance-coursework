@@ -84,3 +84,9 @@
 .load-from-file p {
     margin-bottom: 10px;
 }
+
+.message {
+    padding: 0px 0px 0 20px;
+    color: green;
+    font-size: 15px;
+}

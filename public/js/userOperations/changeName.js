@@ -5,6 +5,9 @@
 	const newName = document.querySelector('[name=toChangeName]');
 	const change = document.querySelector('#change');
 
+	const name = document.querySelector('.name');
+	const message = document.querySelector('.message');
+
   showChange.addEventListener('click', () => {
     showChange.hidden = true;
     hideToChange.classList.toggle('show-toChange');
@@ -29,12 +32,24 @@
 
 			xhr.addEventListener('load', () => {
 				let userFromServer = JSON.parse(xhr.response);
-				console.log(`
-					Data sucessfully changed! 
-					New name: ${userFromServer.newUsername}
-				`);
 
-				window.location.replace('/userProfile');
+				if (userFromServer === 'Имя уже существует') {
+					message.style.color = 'red';
+ 					message.textContent = 'Такое имя уже существует';
+					setTimeout(() => {
+						message.textContent = '';
+					}, 5000);
+				} else {
+					console.log(`
+						Data sucessfully changed! 
+						New name: ${userFromServer.newUsername}
+					`);
+					name.textContent = userFromServer.newUsername;
+					message.textContent = 'Имя успешно изменено';
+					setTimeout(() => {
+						message.textContent = '';
+					}, 5000);
+				}
 			});
 			xhr.send(user);
 

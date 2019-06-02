@@ -19,8 +19,8 @@
 			xhr.addEventListener('load', () => {
 				let userFromServer = JSON.parse(xhr.response);
 
-				if (userFromServer.error) {
-					alert(userFromServer.error)
+				if (userFromServer === 'Неверное имя пользователя или неверный пароль') {
+					alert(userFromServer)
 				} else {
 					console.log(userFromServer.newUsername);
 					window.location.replace('/');

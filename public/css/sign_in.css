@@ -52,6 +52,10 @@
     background: #fff;
     border-bottom: 1px solid #333;
   }
+
+  .form input.username {
+    margin-bottom: 0px;
+  }
   
   .form input[type="text"]:focus,
   .form input[type="text"]:active,
@@ -96,5 +100,11 @@
   .link-sign-up a {
     padding: 0 5px;
     text-decoration: none;
+  }
+
+  #err {
+    color: red;
+    font-size: 14px;
+    padding: 10px 0 10px 10px;
   }
   
