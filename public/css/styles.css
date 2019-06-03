@@ -120,7 +120,7 @@ header {
 
 .menu a:hover,
 .menu #exit:hover {
-  color: #333;
+  color: #eee;
   transition: all .2s;
   cursor: pointer;
 }

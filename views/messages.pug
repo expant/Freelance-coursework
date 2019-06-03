@@ -10,19 +10,7 @@ html(lang='en')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
   body.bg
-    header
-      .wrapper.clearfix
-        .logo
-          span
-            a(href='/') Freelance
-        .sign-in-up
-          .sign_absolute
-            if username
-              span.login #{username}
-            else 
-              a(href='sign_in') Войти
-              span /
-              a(href='sign_up') Зарегистрироваться
+    include header
     .sect-wrap.clearfix
       .wrapp.clearfix
         include sidebar

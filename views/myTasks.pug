@@ -6,7 +6,7 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Биржа
     // CSS
-    link(rel='stylesheet', href='css/market.css')
+    link(rel='stylesheet', href='css/myTasks.css')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
   body.bg
@@ -16,15 +16,8 @@ html(lang='en')
         include sidebar
         .mainw.clearfix
           .tit
-            h1 Биржа
-          .filter
-            .budget
-              h3 Бюджет
-              form(action='')
-                input(type='text', name='from')
-                input(type='text', name='to')
-                input(type='submit', value='Поиск')
-          .market
+            h1 Мои задачи
+          .my_tasks
             if tasks
               for task in tasks
                 .task
@@ -33,7 +26,6 @@ html(lang='en')
                   .flex-container
                     p.price 
                       span.bg-price $#{task.price}
-                    p.name #{task.username}
             else 
               h3 Задач нет
 							

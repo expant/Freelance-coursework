@@ -44,6 +44,8 @@ app.get('/market', tasks.selectTasks);
 
 app.get('/market/:id', tasks.getTask);
 
+app.get('/myTasks', tasks.getMyTasks);
+
 app.get('/sign_in', (req, res) => {
     res.render('sign_in');
 });

@@ -42,5 +42,18 @@ module.exports = {
 		task.getTask(res, err => {
 			if (err) throw err;
 		})
+	},
+
+	getMyTasks: (req, res) => {
+		if (req.session.username) {
+			const username = req.session.username;
+
+			const task = new Task({ username });
+			task.getMyTasks(res, err => {
+				if (err) throw err;
+			});
+		} else {
+			res.redirect('/sign_in');
+		}
 	}
 }

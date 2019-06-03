@@ -72,6 +72,25 @@ class Task {
 			});
 		});
 	}
+
+	getMyTasks(res, cb) {
+		client.query(`
+			SELECT id FROM users WHERE name = '${this.username}';
+		`, (err, result) => {
+			const id = result[0].id;
+			client.query(`
+				SELECT * FROM tasks WHERE user_id = ${id};
+			`, (err, result) => {
+				if (err) throw err;
+				const tasksResult = result;
+				const username = this.username;
+				res.render('../views/myTasks.pug', {
+					tasks: tasksResult,
+					username
+				});
+			});
+		});
+	}
 }
 
 module.exports = Task;
