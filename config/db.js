@@ -39,6 +39,25 @@ client.connect((err) => {
 		if (err) throw err;
 		console.log('Table tasks created!');
 	});
+
+	const sqlRequests = `
+		CREATE TABLE IF NOT EXISTS requests (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		employer_id INT,
+		worker_id INT,
+		task_id INT,
+		FOREIGN KEY (employer_id) 
+			REFERENCES users (id) ON DELETE CASCADE,
+		FOREIGN KEY (worker_id) 
+			REFERENCES users (id) ON DELETE CASCADE,
+		FOREIGN KEY (task_id) 
+			REFERENCES tasks (id) ON DELETE CASCADE
+	);`;
+
+	client.query(sqlRequests, (err, result) => {
+		if (err) throw err;
+		console.log('Table requests created!');
+	});
 });
 
 module.exports = client;

@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
+const WebSocket = require('ws');
+
+const server = new WebSocket.Server({ port: 3000 });
 
 const app = express();
 const jsonParser = express.json();
@@ -30,6 +33,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // ---- using routes ------------------------------------
+
+server.on('connection', ws => {
+    ws.send('Добро пожаловать на фриланс биржу');
+    ws.on('message', message => {
+        const arrClients = server.clients;
+        arrClients.forEach(client => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+});
+
 app.get('/', jsonParser, authentication.getMainPage);
 
 app.post('/', jsonParser, (req, res) => {
