@@ -9,6 +9,7 @@ html(lang='en')
     base(href='/')
     link(rel='stylesheet', type='text/css', href='css/styles.css')
     link(rel='stylesheet', type='text/css', href='css/task.css')
+
   body.bg
     .container
       .wrapp.clearfix
@@ -16,6 +17,9 @@ html(lang='en')
           .tit
             h1  Задача
           .task.clearfix
+            .employer-name
+              h4 Имя заказчика 
+                span#empName  #{username}
             .task-header
               h2 #{title}
             p Текст
@@ -26,6 +30,5 @@ html(lang='en')
               span #{price}
             .back
               form(method="POST")
-                input(type="submit" name="toRespond" value="Откликнуться")
               a(href="market") Назад
             .img_freelance

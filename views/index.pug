@@ -12,8 +12,7 @@ html(lang='en')
     script(src="js/userOperations/logout.js" defer)
     script(src="js/userOperations/websocket.js" defer)
   body
-    header
-      button(id="ws") Test
+    header.bg_head
       .wrapper.clearfix
         .logo
           span
@@ -28,7 +27,7 @@ html(lang='en')
                 ul
                   li: a(href="/userProfile") Мой профиль
                   li: a(href="/market") Биржа
-                  li: a(href="") Мои диалоги
+                  li: a(href="/messages") Мои диалоги
                   li: a(href="") Мои заказы
                   li: a(href='/myTasks') Мои задачи
                   li: button(id="exit") Выйти

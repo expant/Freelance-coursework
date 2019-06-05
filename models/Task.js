@@ -65,10 +65,16 @@ class Task {
 		client.query(query, (err, result) => {
 			if (err) throw err;
 
-			res.render('../views/task.pug', { 
-				title: result[0].title,
-				text: result[0].text,
-				price: result[0].price 
+			const resultOfTask = result;
+			client.query(`
+				SELECT name FROM users WHERE id = '${resultOfTask[0].user_id}';
+			`, (err, result) => {
+				res.render('../views/task.pug', { 
+					title: resultOfTask[0].title,
+					text: resultOfTask[0].text,
+					price: resultOfTask[0].price,
+					username: result[0].name
+				});
 			});
 		});
 	}

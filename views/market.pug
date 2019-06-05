@@ -9,6 +9,8 @@ html(lang='en')
     link(rel='stylesheet', href='css/market.css')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
+
+    script(src="js/requests/createRequest.js" defer)
   body.bg
     include header
     .sect-wrap.clearfix
@@ -17,13 +19,6 @@ html(lang='en')
         .mainw.clearfix
           .tit
             h1 Биржа
-          .filter
-            .budget
-              h3 Бюджет
-              form(action='')
-                input(type='text', name='from')
-                input(type='text', name='to')
-                input(type='submit', value='Поиск')
           .market
             if tasks
               for task in tasks
@@ -33,7 +28,9 @@ html(lang='en')
                   .flex-container
                     p.price 
                       span.bg-price $#{task.price}
+                    span#task_id= task.id
                     p.name #{task.username}
+                  button(name="toRespond") Откликнуться
             else 
               h3 Задач нет
 							

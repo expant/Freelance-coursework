@@ -17,67 +17,14 @@ html(lang='en')
         .mainw
           .tit
             h1 Сообщения
-          section.messages
-            .message.clearfix
-              a(href='#')
-                .name-ico.clearfix
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time.clearfix
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
-            .message
-              a(href='#')
-                .name-ico
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
-            .message
-              a(href='#')
-                .name-ico
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
-            .message
-              a(href='#')
-                .name-ico
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
-            .message
-              a(href='#')
-                .name-ico
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
-            .message
-              a(href='#')
-                .name-ico
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
-            .message
-              a(href='#')
-                .name-ico
-                  .ico
-                    img(src='icons/name.svg', alt='Иконка пользователя')
-                  .name Иван
-                .text-time
-                  .text Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  .time 4 фев, 07:34
+          .msgs
+            if messages
+              for message in messages
+                section.messages
+                  a(href="#")
+                    .message
+                      .name #{message.worker}
+                      .text #{message.task_id}
+                      .time 200000
+            else 
+              h3 Диалогов нет

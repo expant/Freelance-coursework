@@ -60,3 +60,17 @@
     padding: 0 0 10px 20px;
     background: #fff;
 }
+
+.employer-name {
+    text-align: right;
+    padding: 0px 0;
+}
+
+.employer-name h4 {
+    color: #B2DFDB;
+}
+
+.employer-name span {
+    font-size: 17px;
+    color: #333;
+}

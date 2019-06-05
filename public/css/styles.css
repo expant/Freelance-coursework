@@ -43,6 +43,14 @@ header {
   background: #333;
 }
 
+header.bg_head {
+  background: #33eaff;
+}
+
+header.bg_head .logo a {
+  color: #000;
+}
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -226,9 +234,9 @@ header {
   text-align: center;
   padding: 30px;
   margin-bottom: 30px;
-  background: #333;
+  background: #eee;
   border-radius: 0 0 8px 8px;
-  color: #fff;
+  color: #333;
 }
 
 .hiw-img img {

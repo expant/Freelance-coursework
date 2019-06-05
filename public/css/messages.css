@@ -1,60 +1,37 @@
 * {
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.msgs {
+    padding: 30px;
 }
 
 .messages {
-    padding: 40px;
+    padding: 15px 0;
 }
 
 .message {
-    margin-bottom: 40px;
-    text-align: center; 
     transition: all .2s;
-    transform: translate(0, 0);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    padding: 15px;
 }
 
 .message:hover {
     transition: all .2s;
-    transform: translate(-7px, 0);
+    background: #4fc3f7;
+    cursor: pointer;
+    color: #fff;
 }
 
 .message a {
-    border-bottom: 2px solid #eee;
     padding: 20px;
     text-decoration: none;
     color: #333;
     transition: all .2s;
-}
-
-.message a:hover {
-    transition: all .2s;
-    
-}
-
-.name-ico {
-    width: 10%;
-    display: inline-block;
-    margin-right: 50px;
-}
-
-.ico img {
-    width: 25px;
-
-}
-
-.text-time {
-    width: 80%;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-.name-ico .ico, 
-.text-time .text {
-    float: left;
-}
-
-.name-ico .name,
-.text-time .time {
-    float: right;
 }
 

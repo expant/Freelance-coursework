@@ -17,10 +17,13 @@ const tasks = require('./routes/tasks');
 //const { changeData } = require('./routes/changeUserData');
 //const { getUserProfile } = require('./routes/userProfile');
 const showFreelancers = require('./routes/showFreelancers');
+const requests = require('./routes/requests');
+const { getMessages } = require('./routes/messages');
 
 // ---- middleware -------------------------------------
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(session({
     secret: 'key is supersecret'
@@ -34,7 +37,7 @@ app.set('view engine', 'pug');
 
 // ---- using routes ------------------------------------
 
-server.on('connection', ws => {
+/*server.on('connection', ws => {
     ws.send('Добро пожаловать на фриланс биржу');
     ws.on('message', message => {
         const arrClients = server.clients;
@@ -44,7 +47,7 @@ server.on('connection', ws => {
             }
         });
     });
-});
+});*/
 
 app.get('/', jsonParser, authentication.getMainPage);
 
@@ -57,6 +60,7 @@ app.post('/', jsonParser, (req, res) => {
 });
 
 app.get('/market', tasks.selectTasks);
+app.post('/market', jsonParser, requests.createRequest);
 
 app.get('/market/:id', tasks.getTask);
 
@@ -90,6 +94,8 @@ app.get('/createTask', (req, res) => {
 app.post('/createTask', tasks.createTask);
 
 app.get('/freelancers', showFreelancers.showAll);
+
+app.get('/messages', getMessages);
 
 app.listen(7500, 'localhost', () => {
     console.log('Сервер запущен!');

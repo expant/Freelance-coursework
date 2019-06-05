@@ -2,22 +2,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.filter, .market {
-    padding: 40px 40px 40px 40px;
-}
-
-.filter {
-    width: 30%;
-    float: left;
-}
-
 .market {
-    width: 70%;
-    float: right;
-}
-
-.filter h2 {
-    margin-bottom: 20px;
+    padding: 40px 40px 40px 40px;
+    width: 90%;
 }
 
 .categories {
@@ -28,49 +15,6 @@
     width: 100%;
     font-size: 16px;
     padding: 5px 10px;
-}
-
-.budget h3 {
-    margin-bottom: 10px;
-}
-
-.budget input[type="text"] {
-    width: 46%;
-    font-size: 16px;
-    padding: 3px 5px;
-    margin-right: 5px;
-}
-
-.first-input {
-   float: left;
-}
-
-.last-input {
-    float: right;
-}
-
-
-.budget input[type="submit"] {
-    padding: 5px 35px;
-    margin-top: 20px;
-    font-size: 16px;
-    background: #08cefa;
-    border: none;
-    color: #fff;
-    transition: all .2s;
-}
-
-.budget input[type="submit"]:hover {
-    cursor: pointer;
-    transition: all .2s;
-    background: #333;
-}
-
-.budget input[type="text"]:active,
-.budget input[type="text"]:focus,
-.budget input[type="submit"]:active,
-.budget input[type="submit"]:focus {
-    outline: none;
 }
 
 .task {
@@ -151,4 +95,13 @@
 
 .name {
     font-size: 15px;
+}
+
+.task button[name='toRespond'] {
+    padding: 10px 20px;
+    background: #00d2ff;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    margin-top: 10px;
 }

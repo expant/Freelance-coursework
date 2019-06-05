@@ -36,12 +36,16 @@ module.exports = {
 	},
 
 	getTask: (req, res) => {
-		const taskId = req.params.id;
-		const task = new Task({ id: taskId });
+		if (req.session.username) {
+			const id = req.params.id;
+			const task = new Task({ id });
 
-		task.getTask(res, err => {
-			if (err) throw err;
-		})
+			task.getTask(res, err => {
+				if (err) throw err;
+			});
+		} else {
+			res.redirect('/sign_in');
+		}
 	},
 
 	getMyTasks: (req, res) => {
