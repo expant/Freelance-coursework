@@ -55,6 +55,19 @@ class Request {
 			});
 		});
 	}
+
+	showDialog(res, cb) {
+		let query = `
+			SELECT * FROM requests WHERE id = '${this.id}';
+		`
+
+		client.query(query, (err, result) => {
+			if (err) throw err;
+			const dialog = result;
+
+			res.render('../views/dialog.pug', { dialog });
+		});
+	}
 }
 
 module.exports = Request;

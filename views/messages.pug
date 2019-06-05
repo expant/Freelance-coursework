@@ -21,7 +21,7 @@ html(lang='en')
             if messages
               for message in messages
                 section.messages
-                  a(href="#")
+                  a(href=`/messages/${message.id}`)
                     .message
                       .name #{message.worker}
                       .text #{message.task_id}

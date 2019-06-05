@@ -18,7 +18,7 @@ const tasks = require('./routes/tasks');
 //const { getUserProfile } = require('./routes/userProfile');
 const showFreelancers = require('./routes/showFreelancers');
 const requests = require('./routes/requests');
-const { getMessages } = require('./routes/messages');
+const { getMessages, showDialog } = require('./routes/messages');
 
 // ---- middleware -------------------------------------
 app.use(express.urlencoded({ extended: true }));
@@ -96,6 +96,7 @@ app.post('/createTask', tasks.createTask);
 app.get('/freelancers', showFreelancers.showAll);
 
 app.get('/messages', getMessages);
+app.get('/messages/:id', showDialog);
 
 app.listen(7500, 'localhost', () => {
     console.log('Сервер запущен!');
