@@ -31,6 +31,10 @@ html(lang='en')
                       li
                         .message= message.message
                         .time= message.time
-              footer 
-                input(type="text" name="message")
-                button(id="sendAMessage") Отправить
+              footer
+                input(type="file" name="file" id="file" multiple) 
+                label(for="file") Выбрать файлы
+                  img(src="icons/download.svg", class="img_file", alt="file")
+                .mes_send
+                  input(type="text" name="message")
+                  button(id="sendAMessage") Отправить

@@ -23,8 +23,8 @@ toRespond.addEventListener('click', () => {
       setTimeout(() => {
         result.textContent = '';
       }, 5000);
-    } else {
-      result.textContent = 'Что то пошло не так';
+    } else if (reqFromServer === 'Вы не можете откликнуться сами на себя!') {
+      result.textContent = reqFromServer;
       setTimeout(() => {
         result.textContent = '';
       }, 5000);

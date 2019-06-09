@@ -87,7 +87,9 @@ class User {
       DELETE FROM users WHERE name = '${this.username}';
     `, (err, result) => {
       if (err) throw err;
-      res.json('Пользователь удалён');
+      req.session.destroy(() => {
+        res.json('Пользователь удалён');
+      });
     });
   }
 
@@ -100,7 +102,7 @@ class User {
     client.query(query, (err, result) => {
       if (err) throw err;
       res.json(req.body);
-      });
+    });
   }
 }
 

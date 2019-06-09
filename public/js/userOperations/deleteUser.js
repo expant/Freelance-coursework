@@ -6,7 +6,7 @@
 
 		const del = 'Удалить учётную запись';
 
-    let user = JSON.stringify({ del });
+    let user = JSON.stringify({ del: del });
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/userProfile', true);

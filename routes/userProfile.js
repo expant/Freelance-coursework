@@ -1,7 +1,7 @@
 const User = require('../models/User');
 
 module.exports = {
-  getUserProfile: (req, res) => {
+    getUserProfile: (req, res) => {
 		if (req.session.username) {
 			const username = req.session.username;
 
@@ -42,13 +42,12 @@ module.exports = {
 		}
 
 		if (req.body.del) {
-			deleteUser: (req, res) => {
-				const username = req.body.username;
-				const user = new User({ username });
-				user.deleteUser(req, res, (err) => {
-					if (err) throw err;
-				});
+			const username = req.session.username;
+			const user = new User({ username });
+			user.deleteUser(req, res, (err) => {
+				if (err) throw err;
+			});
 		  }
-		}
 	}
 }
+

@@ -19,6 +19,7 @@
     padding: 30px 40px;
     background: #fff;
     margin: 20px 0;
+    margin-bottom: 30px;
     overflow: auto;
 }
 
@@ -27,12 +28,13 @@
     font-size: 18px;
     border: 1px solid #eee;
     width: 85%;
+    margin-top: 10px;
 }
 
 #sendAMessage {
     transition: all .2s;
     padding: 10px 20px;
-    font-size: 17px;
+    font-size: 16px;
     background: #4FC3F7;
     color: #fff;
     border: none;
@@ -42,12 +44,6 @@
     transition: all .2s;
     cursor: pointer;
     background: #333;
-}
-
-.cont-dialog footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
 }
 
 ul#dialog li {
@@ -64,4 +60,38 @@ ul#dialog li {
 ul#dialog .time {
     font-style: italic;
     color: #039BE5;
+}
+
+.dialog label[for="file"] {
+    padding: 20px;
+    color: #37474F;
+}
+
+.dialog input[type="file"] {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+}
+
+.dialog input[type="file"]:hover, 
+.dialog label[for="file"]:hover {
+    cursor: pointer;
+    transition: color .2s;
+    color: #039BE5;
+}
+
+.mes_send {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img_file {
+    vertical-align: middle;
+    width: 18px;
+    margin-left: 10px;
 }
