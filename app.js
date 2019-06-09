@@ -66,6 +66,7 @@ app.get('/market/:id', tasks.getTask);
 app.post('/market/:id', jsonParser, requests.createRequest);
 
 app.get('/myTasks', tasks.getMyTasks);
+app.post('/myTasks', tasks.deleteTask);
 
 app.get('/sign_in', (req, res) => {
     res.render('sign_in');

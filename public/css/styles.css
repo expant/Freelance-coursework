@@ -213,11 +213,6 @@ header.bg_head .logo a {
   border-radius: 4px;
 }
 
-.hire-or-become a:first-of-type {
-  background: #fff;
-  color: #000;
-}
-
 .hire-or-become a:hover {
   transition: all .2s;
   background: #fff;
@@ -262,12 +257,20 @@ header.bg_head .logo a {
 }
 
 .show-all-freelancers a {
+  display: inline-block;
   text-decoration: none;
   font-size: 23px;
   color: #fff;
   background: #2196f3;
   border-radius: 30px;
   padding: 15px 25px;
+  transition: transform .2s;
+  transform: scale(1);
+}
+
+.show-all-freelancers a:hover {
+  transition: transform .2s;
+  transform: scale(1.1);
 }
 
 .tit h1 {
@@ -281,7 +284,7 @@ footer.describe {
   display: flex;
   justify-content: space-around;
   padding: 50px 0;
-  background: #2f3542;
+  background: linear-gradient(to right, #240b36, #c31432);
   font-family: 'Source Sans Pro', sans-serif;
 }
 

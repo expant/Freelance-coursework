@@ -9,6 +9,8 @@ html(lang='en')
     link(rel='stylesheet', href='css/myTasks.css')
     link(rel='stylesheet', href='css/navbar.css')
     link(rel='stylesheet', href='css/styles.css')
+
+    script(src="js/tasks/deleteTasks.js" defer)
   body.bg
     include header
     .sect-wrap.clearfix
@@ -23,8 +25,10 @@ html(lang='en')
                 .task
                   .del
                     a(href=`/market/${task.id}` class="task-head") #{task.title}
-                    span 
-                      img(src="icons/close.svg", alt="close" id="delete")
+                    .delete-task 
+                      span#showDelete Удалить задачу
+                      button(id=`close${task.id}` class="sendTasksId" onclick=`deleteTask(${task.id})`)
+                        img(src="icons/close.svg", alt="close" id="delete")
                   p.task-text #{task.text}
                   .flex-container
                     p.price 

@@ -59,5 +59,14 @@ module.exports = {
 		} else {
 			res.redirect('/sign_in');
 		}
+	},
+
+	deleteTask: (req, res) => {
+		const taskId = req.body.taskId;
+
+		const task = new Task({ taskId });
+		task.deleteTask(req, res, (err) => {
+			if (err) throw err;
+		})
 	}
 }

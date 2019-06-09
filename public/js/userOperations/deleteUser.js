@@ -15,7 +15,8 @@
     xhr.addEventListener('load', () => {
 			let userFromServer = JSON.parse(xhr.response);
 			if (userFromServer === 'Пользователь удалён') {
-				console.log(userFromServer);
+        console.log(userFromServer);
+        alert('Ваша учётная запись успешно удалена!');
 				window.location.replace('/');
 			}
     });

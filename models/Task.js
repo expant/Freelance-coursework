@@ -98,6 +98,15 @@ class Task {
 			});
 		});
 	}
+
+	deleteTask(req, res, cb) {
+		client.query(`
+			DELETE FROM tasks WHERE id = '${this.taskId}';
+		`, (err, result) => {
+			if (err) throw err;
+			res.json('Задача удалена');
+		});
+	}
 }
 
 module.exports = Task;
