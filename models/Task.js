@@ -57,7 +57,7 @@ class Task {
 		});
 	}
 
-	getTask(res, cb) {
+	getTask(req, res, cb) {
 		let query = `
 			SELECT * FROM tasks WHERE id = '${this.id}';
 		`;
@@ -69,6 +69,7 @@ class Task {
 			client.query(`
 				SELECT name FROM users WHERE id = '${resultOfTask[0].user_id}';
 			`, (err, result) => {
+				req.session.taskId = this.id;
 				res.render('../views/task.pug', { 
 					title: resultOfTask[0].title,
 					text: resultOfTask[0].text,

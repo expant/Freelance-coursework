@@ -2,7 +2,7 @@
     padding: 30px 50px;
 }
 
-.user-data {
+.user-data, .about {
     display: flex;
     flex: 1;
     flex-flow: row wrap;
@@ -12,7 +12,8 @@
     background: #eee;
 }
 
-.user-data button {
+.user-data button,
+.about button {
     padding: 10px 20px;
     background: #33eaff;
     border: none;
@@ -22,7 +23,8 @@
     transition: all .2s;
 }
 
-.user-data button:hover {
+.user-data button:hover,
+.about button:hover {
     transition: all .2s;
     background: #333;
     cursor: pointer;
@@ -39,7 +41,9 @@
 .user-data button:active,
 .user-data button:focus,
 .user-data input:active,
-.user-data input:focus {
+.user-data input:focus,
+.about textarea:active,
+.about textarea:focus {
     outline: none;
 }
 
@@ -86,7 +90,22 @@
 }
 
 .message {
-    padding: 0px 0px 0 20px;
+    padding: 0px 0px 10px 20px;
     color: green;
     font-size: 15px;
+}
+
+.about {
+    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.about textarea {
+    resize: none;
+    height: 300px;
+    width: 500px;
+    border: none;
+    padding: 5px;
+    font-size: 14px;
 }

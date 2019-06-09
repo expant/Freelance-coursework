@@ -12,6 +12,8 @@ html(lang='en')
 
     // JS
     script(src="js/userOperations/changeName.js" defer)
+    script(src="js/userOperations/addAbout.js" defer)
+    script(src="js/userOperations/deleteUser.js" defer)
   body.bg
     include header
     .sect-wrap.clearfix
@@ -22,12 +24,6 @@ html(lang='en')
             h1 Профиль
           .user
             if username
-              .avatar
-                .background-avatar
-                .load-from-file
-                  p: label(for="avatar") Загрузить аватар
-                  input(type="file" name="avatar" accept="image/*")
-                  button Загрузить 
               .title-profile Ваше имя
               .user-data
                 .name #{username}
@@ -38,6 +34,16 @@ html(lang='en')
                 div 
                   button(class="show-change") Изменить
               .message
+              .title-profile О себе
+              .about
+                if about
+                  .text-about #{about}
+                else 
+                  textarea(name="about" id="aboutUser")
+                  button(id="saveAbout") Сохранить
+              .delete
+                button(id="deleteUser") Удалить учётную запись
             else 
               div Ничего нет :(
+
                 

@@ -18,11 +18,12 @@ const tasks = require('./routes/tasks');
 //const { getUserProfile } = require('./routes/userProfile');
 const showFreelancers = require('./routes/showFreelancers');
 const requests = require('./routes/requests');
-const { getMessages, showDialog } = require('./routes/messages');
+const { getMessages } = require('./routes/messages');
+const { showDialog, addAMessage } = require('./routes/dialog');
 
 // ---- middleware -------------------------------------
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(session({
@@ -60,9 +61,9 @@ app.post('/', jsonParser, (req, res) => {
 });
 
 app.get('/market', tasks.selectTasks);
-app.post('/market', jsonParser, requests.createRequest);
 
 app.get('/market/:id', tasks.getTask);
+app.post('/market/:id', jsonParser, requests.createRequest);
 
 app.get('/myTasks', tasks.getMyTasks);
 
@@ -96,7 +97,9 @@ app.post('/createTask', tasks.createTask);
 app.get('/freelancers', showFreelancers.showAll);
 
 app.get('/messages', getMessages);
+
 app.get('/messages/:id', showDialog);
+app.post('/messages/:id', addAMessage);
 
 app.listen(7500, 'localhost', () => {
     console.log('Сервер запущен!');

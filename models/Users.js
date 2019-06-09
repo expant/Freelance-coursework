@@ -9,7 +9,7 @@ class Users {
 
   showAll(req, res, cb) {
 		let query = `
-			SELECT id,name FROM	users;
+			SELECT * FROM	users;
 		`;
 
 		client.query(query, (err, result) => {
@@ -20,6 +20,18 @@ class Users {
         username
       });
 		});
+  }
+
+  getFreelancer(req, res, cb) {
+    client.query(`
+      SELECT * FROM users WHERE name = '${this.freelancer}';
+    `, (err, result) => {
+      if (err) throw err;
+      const name = result[0].name;
+      const about = result[0].about;
+
+      res.json({ name, about });
+    });
   }
 }
 

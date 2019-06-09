@@ -1,0 +1,67 @@
+.dialog {
+    background: #fff;
+}
+
+.cont-dialog {
+    padding: 30px 50px;
+    background: #f5f5f5;
+    box-shadow: 0 0 20px -8px #000;
+    
+}
+
+.cont-dialog header {
+    text-align: center;
+    background: #eee;
+}
+
+.cont-dialog section {
+    height: 400px;
+    padding: 30px 40px;
+    background: #fff;
+    margin: 20px 0;
+    overflow: auto;
+}
+
+.cont-dialog input[name="message"] {
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid #eee;
+    width: 85%;
+}
+
+#sendAMessage {
+    transition: all .2s;
+    padding: 10px 20px;
+    font-size: 17px;
+    background: #4FC3F7;
+    color: #fff;
+    border: none;
+}
+
+#sendAMessage:hover {
+    transition: all .2s;
+    cursor: pointer;
+    background: #333;
+}
+
+.cont-dialog footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+ul#dialog li {
+    list-style: none;
+    border-bottom: 1px solid #eee;
+    padding: 10px 20px;
+    font-size: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#dialog .time {
+    font-style: italic;
+    color: #039BE5;
+}

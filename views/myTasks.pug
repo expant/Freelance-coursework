@@ -21,7 +21,10 @@ html(lang='en')
             if tasks
               for task in tasks
                 .task
-                  a(href=`/market/${task.id}` class="task-head") #{task.title}
+                  .del
+                    a(href=`/market/${task.id}` class="task-head") #{task.title}
+                    span 
+                      img(src="icons/close.svg", alt="close" id="delete")
                   p.task-text #{task.text}
                   .flex-container
                     p.price 

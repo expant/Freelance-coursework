@@ -4,13 +4,15 @@ module.exports = {
 	createRequest: (req, res) => {
 		
 		const employerName = req.body.employerName;
-		const taskId = req.body.taskId;
-		const workerId = req.session.username;
+		const taskId = req.session.taskId;
+		const workerName = req.session.username;
 
+		console.log(taskId);
+		
 		const requestData = {
-			workerId: workerId,
+			taskId: taskId,
 			employerName: employerName,
-			taskId: taskId
+			workerName: workerName
 		}
 
 		const request = new Request(requestData);

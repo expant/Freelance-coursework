@@ -16,11 +16,12 @@ client.connect((err) => {
 			id INT AUTO_INCREMENT PRIMARY KEY,
 			name VARCHAR(20),
 			password VARCHAR(20),
+			about VARCHAR(1000),
 			UNIQUE (name)
 	);`;
 
 	client.query(sqlUsers, (err, result) => {
-		if (err) throw err;
+		if (err) throw err;	
 		console.log('Table users created!');
 	});
 
@@ -43,21 +44,42 @@ client.connect((err) => {
 	const sqlRequests = `
 		CREATE TABLE IF NOT EXISTS requests (
 			id INT AUTO_INCREMENT PRIMARY KEY,
-			employer VARCHAR(20),
-			worker VARCHAR(20),
-			task_id VARCHAR(50),
+			employer INT,
+			worker INT,
+			task_id INT,
 			FOREIGN KEY (employer) 
-				REFERENCES users (name) ON DELETE CASCADE,
+				REFERENCES users (id) ON DELETE CASCADE,
 			FOREIGN KEY (worker) 
-				REFERENCES users (name) ON DELETE CASCADE,
+				REFERENCES users (id) ON DELETE CASCADE,
 			FOREIGN KEY (task_id) 
-				REFERENCES tasks (title) ON DELETE CASCADE
+				REFERENCES tasks (id) ON DELETE CASCADE
 	);`;
 
 	client.query(sqlRequests, (err, result) => {
 		if (err) throw err;
 		console.log('Table requests created!');
 	});
+
+	const sqlDialog = `
+		CREATE TABLE IF NOT EXISTS dialogs (
+			id INT AUTO_INCREMENT PRIMARY KEY,
+			user1_id INT,
+			user2_id INT,
+			message VARCHAR(100),
+			request_id INT,
+			time VARCHAR(50),
+			FOREIGN KEY (user1_id) 
+				REFERENCES users (id) ON DELETE CASCADE,
+			FOREIGN KEY (user2_id) 
+				REFERENCES users (id) ON DELETE CASCADE,
+			FOREIGN KEY (request_id) 
+				REFERENCES requests (id) ON DELETE CASCADE
+		);`;
+
+		client.query(sqlDialog, (err, result) => {
+			if (err) throw err;
+			console.log('Table dialogs created!');
+		});
 });
 
 module.exports = client;

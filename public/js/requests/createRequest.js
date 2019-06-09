@@ -1,33 +1,35 @@
 const toRespond = document.querySelector('[name=toRespond]');
+const result = document.querySelector('#result');
 
 toRespond.addEventListener('click', () => {
 
-  const employerName = document.querySelectorAll('.name');
-  const taskId = document.querySelectorAll('#task_id');
+  const employerName = document.querySelector('#empName').textContent;
 
   console.log(employerName);
-  console.log(taskId);
-  console.log(typeof taskId);
 
-    /*let request = JSON.stringify({ 
-      employerName: employerName,
-      taskId: taskId 
-    });
+  let request = JSON.stringify({ 
+    employerName: employerName
+  });
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', `/market`, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', `/market/:id`, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
 
-    xhr.addEventListener('load', () => {
-      let reqFromServer = JSON.parse(xhr.response);
-      if (reqFromServer === 'Заявка принята') {
-        console.log(reqFromServer);
-      } else {
-        console.log('Что то пошло не так');
-      }
-      
-
-    });
-		xhr.send(request);*/
-		
+  xhr.addEventListener('load', () => {
+    let reqFromServer = JSON.parse(xhr.response);
+    if (reqFromServer === 'Заявка принята') {
+      console.log(reqFromServer);
+      result.textContent = reqFromServer;
+      setTimeout(() => {
+        result.textContent = '';
+      }, 5000);
+    } else {
+      result.textContent = 'Что то пошло не так';
+      setTimeout(() => {
+        result.textContent = '';
+      }, 5000);
+    }
+  });
+  
+	xhr.send(request);
 });

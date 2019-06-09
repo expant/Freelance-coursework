@@ -23,8 +23,7 @@ html(lang='en')
                 section.messages
                   a(href=`/messages/${message.id}`)
                     .message
-                      .name #{message.worker}
+                      .name Заказчик : #{message.employer}
                       .text #{message.task_id}
-                      .time 200000
             else 
               h3 Диалогов нет

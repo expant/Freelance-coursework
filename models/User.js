@@ -7,6 +7,20 @@ class User {
       }
   }
 
+  getUser(req, res, cb) {
+    client.query(`
+      SELECT * FROM users WHERE name = '${this.username}';
+    `, (err, result) => {
+      if (err) throw err;
+      const data = result;
+
+      const username = result[0].name;
+      const about = result[0].about;
+
+      res.render('../views/userProfile.pug', { username, about });
+    });
+  }
+
   check(req, res, cb) {
     let query = `
       SELECT * FROM users 
@@ -48,9 +62,9 @@ class User {
 		});
   }
 
-  update(req, res, cb) {
+  updateName(req, res, cb) {
     let query = `
-      UPDATE users SET name = '${this.newUsername}' 
+      UPDATE users SET name = '${this.data}' 
       WHERE name = '${this.username}';
     `;
 
@@ -65,6 +79,28 @@ class User {
         res.json(req.body);
       }
     });
+  }
+
+  deleteUser(req, res, cb) {
+    console.log(this.username);
+    client.query(`
+      DELETE FROM users WHERE name = '${this.username}';
+    `, (err, result) => {
+      if (err) throw err;
+      res.json('Пользователь удалён');
+    });
+  }
+
+  addAbout(req, res, cb) {
+    let query = `
+      UPDATE users SET about = '${this.data}' 
+      WHERE name = '${this.username}';
+    `;
+
+    client.query(query, (err, result) => {
+      if (err) throw err;
+      res.json(req.body);
+      });
   }
 }
 

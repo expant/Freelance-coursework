@@ -112,6 +112,7 @@ header.bg_head .logo a {
   margin-top: 28px;
   list-style: none;
   background: #333;
+  border-radius: 10px;
   padding: 10px;
   display: none;
 }

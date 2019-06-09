@@ -22,3 +22,15 @@ span.bg-price {
     font-size: 17px;
     color: green;
 }
+
+.del {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.del img {
+    width: 17px;
+}
+

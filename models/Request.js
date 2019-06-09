@@ -8,28 +8,21 @@ class Request {
   }
 
   createRequest(req, res, cb) {
-		console.log(`name : ${this.employerName}`);
-
-		let sqlEmployerId = `
-			SELECT id FROM tasks WHERE user_id = '${this.employerName}';
-		`;
-
-		client.query(sqlEmployerId, (err, result) => {
-			if (err) {
-				if (result[0].id === undefined) {
-					console.log(`result : ${result[0].id}`);
-				}
-			}
+		console.log(typeof this.employerName);
+		client.query(`
+			SELECT id FROM users WHERE name = '${this.employerName}';
+		`, (err, result) => {
+			if (err) throw err;
 			const employerId = result[0].id;
 
 			client.query(`
-				SELECT * FROM users WHERE user_id = '${employerId}';
+				SELECT id FROM users WHERE name = '${this.workerName}';
 			`, (err, result) => {
 				if (err) throw err;
-				const task_id = result[0].id;
+				const workerId = result[0].id;
 				let queryReq = `
-					INSERT INTO requests (employer_id, worker_id, task_id) 
-					VALUES ('${5}', '${2}', '${1}');
+					INSERT INTO requests (employer, worker, task_id) 
+					VALUES ('${employerId}', '${workerId}', '${this.taskId}');
 				`;
 
 				client.query(queryReq, (err, result) => {   
@@ -38,34 +31,61 @@ class Request {
 				});
 			});
 		});
-	}
+  }
+	
 
 	getMessages(res, cb) {
 		client.query(`
-			SELECT * FROM requests WHERE employer = '${this.username}';
+			SELECT id FROM users WHERE name = '${this.username}';
 		`, (err, result) => {
 			if (err) throw err;
-			const messages = result;
+			const userId = result[0].id;
 
-			console.log(messages);
+			client.query(`
+				SELECT * FROM requests WHERE employer = '${userId}' OR worker = '${userId}';
+			`, (err, result) => {
+				if (err) throw err;
+				const messages = result;
 
-			res.render('../views/messages.pug', { 
-				messages: messages, 
-				username: this.username 
+				client.query(`
+					SELECT * FROM users;
+				`, (err, result) => {
+					if (err) throw err;
+
+					const userResult = result;
+
+					userResult.forEach(user => {
+						messages.forEach(message => {
+							if (user.id === message.employer) {
+								message.employer = user.name;
+							}
+						});
+					});
+
+
+					client.query(`
+						SELECT * FROM tasks;
+					`, (err, result) => {
+						if (err) throw err;
+						const taskResult = result;
+
+						taskResult.forEach(task => {
+							messages.forEach(message => {
+								if (task.id === message.task_id) {
+									message.task_id = task.title;
+								}
+							});
+						});
+
+						console.log(messages);
+
+						res.render('../views/messages.pug', { 
+							messages: messages, 
+							username: this.username 
+						});
+					});
+				});
 			});
-		});
-	}
-
-	showDialog(res, cb) {
-		let query = `
-			SELECT * FROM requests WHERE id = '${this.id}';
-		`
-
-		client.query(query, (err, result) => {
-			if (err) throw err;
-			const dialog = result;
-
-			res.render('../views/dialog.pug', { dialog });
 		});
 	}
 }

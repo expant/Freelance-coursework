@@ -18,12 +18,11 @@
 .back-search {
     display: flex;
     margin-bottom: 30px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-.back, 
-.search {
-    width: 50%;
-}
 
 .search input[type="text"] {
     font-size: 19px;
@@ -34,7 +33,7 @@
 }
 
 .back a, 
-.search input[type="submit"] {
+.search button {
     padding: 10px 30px;
     background: #33eaff; 
     border-radius: 5px;
@@ -46,12 +45,23 @@
 }
 
 .back a:hover,
-.search input[type="submit"]:hover {
+.search button:hover {
     transition: all .2s;
     background: #333;
+    cursor: pointer;
 }
 
 .search input[type="text"]:focus,
 .search input[type="text"]:active {
     outline: 0;
+}
+
+.task-head {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.task-text {
+    margin-left: 10px;
 }

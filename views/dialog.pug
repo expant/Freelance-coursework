@@ -4,9 +4,33 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    title Биржа
+    title Сообщения
 
     base(href='/')
-    link(rel='stylesheet', type='text/css', href='css/styles.css')
-    link(rel='stylesheet', type='text/css', href='css/task.css')
-	body.bg
+    link(rel="stylesheet", type='text/css', href="css/styles.css")
+    link(rel="stylesheet", type='text/css', href="css/navbar.css")
+    link(rel="stylesheet", type='text/css', href="css/dialog.css")
+
+    script(src="js/sendMessage.js" defer)
+
+  body.bg
+    include header
+    .sect-wrap.clearfix
+      .wrapp.clearfix
+        include sidebar
+        .mainw.clearfix
+          .tit
+            h1  Диалог
+          .dialog
+            .cont-dialog
+              header #{workerName}
+              section 
+                ul#dialog
+                  if messages
+                    for message in messages
+                      li
+                        .message= message.message
+                        .time= message.time
+              footer 
+                input(type="text" name="message")
+                button(id="sendAMessage") Отправить

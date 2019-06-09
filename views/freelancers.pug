@@ -8,6 +8,8 @@ html(lang='en')
     // CSS
     link(rel='stylesheet', href='css/styles.css')
     link(rel="stylesheet", href="css/freelancers.css")
+
+    script(src="js/findFreelancer.js" defer)
   body.bg
     include header
     .sect-wrap.clearfix
@@ -20,14 +22,13 @@ html(lang='en')
               .back
                 a(href="/") Назад
               .search
-                form(method="POST")
-                  p: label(for="findTheFreelancer") Имя фрилансера
-                  input(type="text" name="findTheFreelancer" required)
-                  input(type="submit" value="Найти")
+                p: label(for="findTheFreelancer") Имя фрилансера
+                input(type="text" name="findTheFreelancer" required)
+                button(id="findFreelancer") Найти
             if freelancers
               for freelancer in freelancers
                 .freelancer
                   a(href=`#` class="task-head") #{freelancer.name}
-                  p.task-text #{freelancer.id}
+                  p.task-text #{freelancer.about}
             else 
               h3 Пользователей нет

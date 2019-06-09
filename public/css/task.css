@@ -20,9 +20,11 @@
 }
 
 .back {
-    float: right;
     padding-top: 20px;
     display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .back input {
@@ -73,4 +75,26 @@
 .employer-name span {
     font-size: 17px;
     color: #333;
+}
+
+.back button[name="toRespond"] {
+    transition: background .2s;
+    padding: 10px 30px;
+    background: #33eaff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.back button[name="toRespond"]:hover {
+    transition: all .2s;
+    cursor: pointer;
+    background: #333;
+}
+
+.back #result {
+    margin-right: 20px;
+    color: green;
 }

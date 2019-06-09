@@ -40,7 +40,7 @@ module.exports = {
 			const id = req.params.id;
 			const task = new Task({ id });
 
-			task.getTask(res, err => {
+			task.getTask(req, res, err => {
 				if (err) throw err;
 			});
 		} else {
